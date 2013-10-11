@@ -1,0 +1,152 @@
+.flip-panel {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display:inline-block;
+  
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+}
+/* -- make sure to declare a default for every property that you want animated -- */
+/* -- general styles, including Y axis rotation -- */
+.flip-panel > .front {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: inherit;
+  height: inherit;
+
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+
+  -ms-transform: rotateX(0deg) rotateY(0deg);
+  -ms-transform-style: preserve-3d;
+  -ms-backface-visibility: hidden;
+
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  /* -- transition is the magic sauce for animation -- */
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.flip-panel.flip > .front,
+.flip-panel.hover:hover > .front {
+  z-index: 900;
+
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flip-panel > .back {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  width: inherit;
+  height: inherit;
+  
+  -webkit-transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+
+  -moz-transform: rotateY(-180deg);
+  -moz-transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+
+  -ms-transform: rotateY(-180deg);
+  -ms-transform-style: preserve-3d;
+  -ms-backface-visibility: hidden;
+
+  transform: rotateY(-180deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+
+  /* -- transition is the magic sauce for animation -- */
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.flip-panel.flip > .back,
+.flip-panel.hover:hover > .back {
+  z-index: 1000;
+
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -ms-transform: rotateX(0deg) rotateY(0deg);
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+
+/* -- vertical axis rotation -- */
+.vertical > .front {
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -ms-transform: rotateX(0deg) rotateY(0deg);
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.vertical.flip > .front,
+.vertical.hover:hover > .front {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+.vertical > .back {
+  -webkit-transform: rotateX(-180deg);
+  -moz-transform: rotateX(-180deg);
+  -ms-transform: rotateX(-180deg);
+  transform: rotateX(-180deg);
+}
+.vertical.flip > .back,
+.vertical.hover:hover > .back {
+  -webkit-transform: rotateX(0deg) rotateY(0deg);
+  -moz-transform: rotateX(0deg) rotateY(0deg);
+  -ms-transform: rotateX(0deg) rotateY(0deg);
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+/* -- diagonal axis rotation -- */
+.diagonal > .front {
+  -webkit-transform: rotate3d(45,45,0,0deg);
+  -moz-transform: rotate3d(45,45,0,0deg);
+  -ms-transform: rotate3d(45,45,0,0deg);
+  transform: rotate3d(45,45,0,0deg);
+}
+.diagonal.flip > .front,
+.diagonal.hover:hover > .front {
+  -webkit-transform: rotate3d(-45,-45,0,180deg);
+  -moz-transform: rotate3d(-45,-45,0,180deg);
+  -ms-transform: rotate3d(-45,-45,0,180deg);
+  transform: rotate3d(-45,-45,0,180deg);
+}
+.diagonal > .back {
+  -webkit-transform: rotate3d(45,45,0,-180deg);
+  -moz-transform: rotate3d(45,45,0,-180deg);
+  -ms-transform: rotate3d(45,45,0,-180deg);
+  transform: rotate3d(45,45,0,-180deg);
+}
+.diagonal.flip > .back,
+.diagonal.hover:hover > .back {
+  -webkit-transform: rotate3d(45,45,0,-0deg);
+  -moz-transform: rotate3d(45,45,0,-0deg);
+  -ms-transform: rotate3d(45,45,0,-0deg);
+  transform: rotate3d(45,45,0,-0deg);
+}
