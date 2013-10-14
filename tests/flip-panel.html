@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Test block grid</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../../bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		
+		<style>
+		/*test styles*/
+		.flip-panel{
+			text-align: center;
+		}
+		.front{
+			background: #ccc;
+		}
+		.back{
+			background: #aaa;
+		}
+		</style>
+
+		<link href="../css/walking-extras.css" rel="stylesheet">
+	</head>
+
+	<body>
+		
+		<div class="container">
+			<br><br>
+			<div class="col-sm-3">
+				<div class="flip-panel hover">
+					<div class="front">
+						<h2>Front</h2>
+						<p>This panel flips horizontally on hover</p>
+					</div>
+					<div class="back">
+						<h2>Back</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="flip-panel vertical hover">
+					<div class="front">
+						<h2>Front</h2>
+						<p>This panel flips vertically on hover</p>
+					</div>
+					<div class="back">
+						<h2>Back</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="flip-panel diagonal hover">
+					<div class="front">
+						<h2>Front</h2>
+						<p>This panel flips diagonally on hover</p>
+					</div>
+					<div class="back">
+						<h2>Back</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="flip-panel flip">
+					<div class="front">
+						<h2>Front</h2>
+					</div>
+					<div class="back">
+						<h2>Back</h2>
+						<p>This panel is flipped by default</p>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</body>
+</html>

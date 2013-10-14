@@ -1,0 +1,17 @@
+.rotateXY(@Xdegrees,@Ydegrees) {
+  -webkit-transform: rotateX(@Xdegrees) rotateY(@Ydegrees);
+      -ms-transform: rotateX(@Xdegrees) rotateY(@Ydegrees); // IE9+
+          transform: rotateX(@Xdegrees) rotateY(@Ydegrees);
+}
+.transform-style(@type) {
+  -webkit-transform-style: @type;
+     -moz-transform-style: @type;
+      -ms-transform-style: @type; // IE9+
+          transform-style: @type;
+}
+.rotate3d(@x; @y; @z; @angle){
+  -webkit-transform: rotate3d(@x,@y,@z,@angle);
+  -moz-transform: rotate3d(@x,@y,@z,@angle);
+  -ms-transform: rotate3d(@x,@y,@z,@angle);
+  transform: rotate3d(@x,@y,@z,@angle);
+}

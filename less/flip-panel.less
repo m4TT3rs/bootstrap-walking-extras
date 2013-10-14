@@ -1,0 +1,97 @@
+.flip-panel {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	display:inline-block;
+	
+	.perspective(600px);
+
+	// FRONT PANEL
+	> .front {
+		float: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: inherit;
+		height: inherit;
+
+		.rotateXY(0deg,0deg);
+		.transform-style(preserve-3d);
+		.backface-visibility(hidden);
+
+		/* -- transition is the magic sauce for animation -- */
+		.transition(all .4s ease-in-out);
+	}
+	&.flip 			> .front,
+	&.hover:hover 	> .front {
+		z-index: 10;
+		.rotateY(180deg);
+	}
+
+	// BACK PANEL
+	> .back {
+		float: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 800;
+		width: inherit;
+		height: inherit;
+
+		.rotateY(-180deg);
+		.transform-style(preserve-3d);
+		.backface-visibility(hidden);
+
+		/* -- transition is the magic sauce for animation -- */
+		.transition(all .4s ease-in-out);
+	}
+	&.flip 			> .back,
+	&.hover:hover 	> .back {
+		z-index: 20;
+
+		.rotateXY(0deg,0deg);
+	}
+
+
+	/* -- vertical axis rotation -- */
+	&.vertical{
+		// FRONT PANEL
+		> .front {
+			.rotateXY(0deg,0deg);
+		}
+		&.flip 			> .front,
+		&.hover:hover 	> .front {
+			.rotateX(180deg);
+		}
+		// BACK PANEL
+		> .back {
+			.rotateX(-180deg);
+		}
+		&.flip > .back,
+		&.hover:hover > .back {
+			.rotateXY(0deg,0deg);
+		}
+	}
+
+	/* -- diagonal axis rotation -- */
+	&.diagonal{
+		// FRONT PANEL
+		> .front {
+			.rotate3d(45,45,0,0deg);
+		}
+		&.flip > .front,
+		&.hover:hover > .front {
+			.rotate3d(-45,-45,0,180deg);
+		}
+		// BACK PANEL
+		> .back {
+			.rotate3d(45,45,0,-180deg);
+		}
+		&.flip > .back,
+		&.hover:hover > .back {
+			.rotate3d(45,45,0,-0deg);
+		}
+	}
+
+}

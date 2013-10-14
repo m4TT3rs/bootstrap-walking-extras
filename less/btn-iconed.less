@@ -1,0 +1,44 @@
+// this code is designed for both the default glyphicons in bootstrap and Fontawesome icons.
+.btn-iconed{
+  display:inline-table;
+  white-space: normal;
+  text-align: left;
+  > span,
+  .glyphicon,
+  [class^="icon-"],
+  [class*=" icon-"]{
+    display:table-cell;
+    vertical-align: middle;
+  }
+  .glyphicon,
+  [class^="icon-"],
+  [class*=" icon-"]{
+    padding-right: .3em;
+  }
+
+  > span + [class^="icon-"],
+  > span + [class*=" icon-"]{
+    padding-left: .3em;
+    padding-right: 0;
+  }
+
+
+  // bootstrap integration
+  &.btn-block{
+    display:table;
+    padding-left: @padding-base-horizontal;
+    padding-right: @padding-base-horizontal;
+    &.btn-lg{
+      padding-left: @padding-large-horizontal;
+      padding-right: @padding-large-horizontal;
+    }
+    &.btn-sm{
+      padding-left: @padding-small-horizontal;
+      padding-right: @padding-small-horizontal;
+    }
+    &.btn-xs{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
