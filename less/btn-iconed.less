@@ -3,6 +3,8 @@
   display:inline-table;
   white-space: normal;
   text-align: left;
+  background-clip: padding-box;
+  
   > span,
   .glyphicon,
   [class^="icon-"],
@@ -13,13 +15,17 @@
   .glyphicon,
   [class^="icon-"],
   [class*=" icon-"]{
-    padding-right: .3em;
+    width: 16/14em;
+    &.icon-large {
+      width: 20/14em;
+    }
   }
 
   > span + [class^="icon-"],
   > span + [class*=" icon-"]{
     padding-left: .3em;
     padding-right: 0;
+    text-align: right;
   }
 
 

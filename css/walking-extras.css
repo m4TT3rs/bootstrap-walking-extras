@@ -6508,6 +6508,7 @@ td.visible-print {
   display: inline-table;
   white-space: normal;
   text-align: left;
+  background-clip: padding-box;
 }
 .btn-iconed > span,
 .btn-iconed .glyphicon,
@@ -6519,12 +6520,18 @@ td.visible-print {
 .btn-iconed .glyphicon,
 .btn-iconed [class^="icon-"],
 .btn-iconed [class*=" icon-"] {
-  padding-right: .3em;
+  width: 1.1428571428571428em;
+}
+.btn-iconed .glyphicon.icon-large,
+.btn-iconed [class^="icon-"].icon-large,
+.btn-iconed [class*=" icon-"].icon-large {
+  width: 1.4285714285714286em;
 }
 .btn-iconed > span + [class^="icon-"],
 .btn-iconed > span + [class*=" icon-"] {
   padding-left: .3em;
   padding-right: 0;
+  text-align: right;
 }
 .btn-iconed.btn-block {
   display: table;
