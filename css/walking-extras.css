@@ -6501,6 +6501,9 @@ td.visible-print {
 .flex-video.widescreen {
   padding-bottom: 56.25%;
 }
+.flex-video.anamorphic {
+  padding-bottom: 41.66666666666667%;
+}
 .flex-video.no-chrome {
   padding-top: 0;
 }
