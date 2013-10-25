@@ -4,7 +4,7 @@
 	&:after {
 		content: attr(data-tooltip);
 		position: absolute;
-		top: -(5px + @tooltip-arrow-width + @line-height-computed);
+		top: -(4px + 6px + @tooltip-arrow-width + @line-height-computed); // 4px is spacing, 6px is vertical padding
 		left: -20px;
 
 		padding: 3px 8px;
@@ -23,7 +23,7 @@
 	&:before {
 		content: "";
 		position: absolute; 
-		top: -(5px);  
+		top: -(4px + @tooltip-arrow-width);  
 		left: 5px;
 
 		border-top: @tooltip-arrow-width solid @tooltip-arrow-color;
@@ -33,10 +33,13 @@
 		z-index: @zindex-tooltip;
 	}
 
-	&:hover{
+	&:hover,
+	&:focus{
 		&:before,
 		&:after{
 			visibility: visible;
 		}
 	}
 }
+// TODO: add different orientations (tip to the left/right/centered/bottom/...)
+// TODO: add different sizes? multiline possible somehow?

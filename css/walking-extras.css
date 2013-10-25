@@ -6691,7 +6691,7 @@ body:before {
 [data-tooltip]:after {
   content: attr(data-tooltip);
   position: absolute;
-  top: -30px;
+  top: -35px;
   left: -20px;
   padding: 3px 8px;
   color: #ffffff;
@@ -6706,7 +6706,7 @@ body:before {
 [data-tooltip]:before {
   content: "";
   position: absolute;
-  top: -5px;
+  top: -9px;
   left: 5px;
   border-top: 5px solid #000000;
   border-left: 5px solid transparent;
@@ -6715,7 +6715,9 @@ body:before {
   z-index: 1030;
 }
 [data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
+[data-tooltip]:focus:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:after {
   visibility: visible;
 }
 /* margins */
