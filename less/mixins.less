@@ -15,3 +15,14 @@
   -ms-transform: rotate3d(@x,@y,@z,@angle);
   transform: rotate3d(@x,@y,@z,@angle);
 }
+
+.font-face(@fontname, @fontfile) {
+    font-family: "@{fontname}";
+    src: url("@{fontfile}.eot");
+    src: url("@{fontfile}.eot?#iefix") format("embedded-opentype"),
+         url("@{fontfile}.woff") format("woff"),
+         url("@{fontfile}.ttf") format("truetype"),
+         url("@{fontfile}.svg#@{fontname}") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
