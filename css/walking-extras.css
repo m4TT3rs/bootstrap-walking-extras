@@ -6674,6 +6674,39 @@ td.visible-print {
   -ms-transform: rotate3d(45, 45, 0, 0deg);
   transform: rotate3d(45, 45, 0, 0deg);
 }
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000000;
+  border-radius: 4px;
+  white-space: nowrap;
+  visibility: hidden;
+  z-index: 1030;
+}
+[data-tooltip]:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  border-top: 5px solid #000000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  visibility: hidden;
+  z-index: 1030;
+}
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+}
 /* margins */
 .margin-xs-t-n,
 .margin-xs-v-n,
