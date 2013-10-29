@@ -6545,6 +6545,21 @@ td.visible-print {
 .flex-video-widescreen {
   padding-bottom: 56.25%;
 }
+/* ==========================================================================
+   button with an icon
+   ========================================================================== */
+/**
+ * this class allows you ta align an icon with the text in a btn, the icon will
+ * always be aligned in the middle of the text.
+ * This code is designed for both the default bootstrap glyphicons and Fontawesome.
+ *
+ * Example HTML:
+ *
+ * <div class="btn btn-default btn-iconed">
+ *     <i class="glyphicon glyphicon-<type>"></i>
+ *     <span>[button text]</span>
+ * </div>
+ */
 .btn-iconed {
   display: inline-table;
   white-space: normal;
@@ -6591,6 +6606,25 @@ td.visible-print {
   padding-left: 5px;
   padding-right: 5px;
 }
+/* ==========================================================================
+   3D flip panels
+   ========================================================================== */
+/**
+ * This class allows you to create panels that perform a 3D card flip when
+ * hovered or when activated by js.
+ * !! you must specify a height and a width on the flip panel
+ *
+ * modifiers:
+ * .flip = this extra class flips the box around, can be added by JS to make it flip
+ * .hover = adding this class makes the panel flip on :hover.
+ *
+ * Example HTML:
+ *
+ * <div class="flip-panel">
+ *     <div class="front">[content of the front side]</div>
+ *     <div class="back">[content of the back side]</div>
+ * </div>
+ */
 .flip-panel {
   width: 200px;
   height: 200px;
