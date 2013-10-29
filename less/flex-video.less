@@ -1,6 +1,24 @@
+/* ==========================================================================
+   Flexible media embeds
+   ========================================================================== */
+
+/**
+ * Flexible media embeds
+ *
+ * For use with media embeds – such as videos, slideshows, or even images –
+ * that need to retain a specific aspect ratio but adapt to the width of their
+ * containing element.
+ *
+ * Example HTML:
+ *
+ * <div class="flex-video flex-video-widescreen">
+ *     [iframe|object|embed|img]
+ * </div>
+ */
+
 .flex-video {
   position: relative;
-  padding-top: 25px;
+  padding-top: 0px;
   padding-bottom: percentage(3 / 4);
   height: 0;
   margin-bottom: @line-height-computed;
@@ -16,14 +34,13 @@
     width: 100%;
     height: 100%; 
   }
-
-  &.widescreen{
-    padding-bottom: percentage(9 / 16); // 16/9-format
-  }
-  &.anamorphic{
-    padding-bottom: percentage(1 / 2.4); // Anamorphic format (http://en.wikipedia.org/wiki/Anamorphic_format)
-  }
-  &.no-chrome{
-    padding-top: 0;
-  }
 }
+.flex-video-youtube{
+  padding-top: 25px; // extra space for the youtube chrome
+}
+.flex-video-widescreen{
+  padding-bottom: percentage(9 / 16); // 16/9-format
+}
+// .flex-video-anamorphic{
+//   padding-bottom: percentage(1 / 2.4); // Anamorphic format (http://en.wikipedia.org/wiki/Anamorphic_format)
+// }
