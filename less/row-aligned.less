@@ -10,7 +10,7 @@
  * Example HTML:
  *
  * <div class="row row-aligned">
- *     <div class="col-<breakpoint>-<size>">...</div>
+ *     <div class="col-<breakpoint>-<size> col-<breakpoint>-<alignment>">...</div>
  * </div>
  */
 
@@ -30,10 +30,14 @@
   > .col-xs-11,
   > .col-xs-12{
     display:table-cell;
-    vertical-align: middle;
     float:none;
   }
 }
+
+.col-xs-top{  vertical-align: top;  }
+.col-xs-middle{  vertical-align: middle;  }
+.col-xs-bottom{  vertical-align: bottom;  }
+
 @media (min-width: @screen-sm-min) {
   .row-aligned{
     > .col-sm-1,
@@ -49,10 +53,13 @@
     > .col-sm-11,
     > .col-sm-12{
       display:table-cell;
-      vertical-align: middle;
       float:none;
     }
   }
+
+  .col-sm-top{  vertical-align: top;  }
+  .col-sm-middle{  vertical-align: middle;  }
+  .col-sm-bottom{  vertical-align: bottom;  }
 }
 @media (min-width: @screen-md-min) {
   .row-aligned{
@@ -69,10 +76,13 @@
     > .col-md-11,
     > .col-md-12{
       display:table-cell;
-      vertical-align: middle;
       float:none;
     }
   }
+  
+  .col-md-top{  vertical-align: top;  }
+  .col-md-middle{  vertical-align: middle;  }
+  .col-md-bottom{  vertical-align: bottom;  }
 }
 @media (min-width: @screen-lg-min) {
   .row-aligned{
@@ -89,8 +99,11 @@
     > .col-lg-11,
     > .col-lg-12{
       display:table-cell;
-      vertical-align: middle;
       float:none;
     }
   }
+  
+  .col-lg-top{  vertical-align: top;  }
+  .col-lg-middle{  vertical-align: middle;  }
+  .col-lg-bottom{  vertical-align: bottom;  }
 }
