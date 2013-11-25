@@ -1,0 +1,47 @@
+/* ==========================================================================
+   overlay
+   ========================================================================== */
+
+/**
+ * inspired on http://www.getuikit.com/docs/overlay.html
+ *
+ * Example HTML:
+ *
+ * <a class="overlay" href="">
+ *   <img src="" alt="">
+ *   <div class="overlay-area">
+ *     <i class="overlay-icon ..."></i>
+ *   </div>
+ * </a>
+ */
+.overlay {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.overlay-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: @overlay-area-color;
+  opacity: 0;
+  .transition(opacity .15s linear);
+  padding: @overlay-area-padding;
+  color: @overlay-area-color;
+}
+.overlay:hover .overlay-area{
+  opacity: 1;
+}
+.overlay-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.5em;
+  // center and size it
+  width: (18em / 14);
+  text-align: center;
+  margin-left: -(18em / 14)/2;
+}
