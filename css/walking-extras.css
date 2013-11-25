@@ -629,17 +629,20 @@
 }
 .btn-iconed > span,
 .btn-iconed .glyphicon,
+.btn-iconed .fa,
 .btn-iconed [class^="icon-"],
 .btn-iconed [class*=" icon-"] {
   display: table-cell;
   vertical-align: middle;
 }
 .btn-iconed .glyphicon,
+.btn-iconed .fa,
 .btn-iconed [class^="icon-"],
 .btn-iconed [class*=" icon-"] {
   width: 1.1428571428571428em;
 }
 .btn-iconed .glyphicon.icon-large,
+.btn-iconed .fa.icon-large,
 .btn-iconed [class^="icon-"].icon-large,
 .btn-iconed [class*=" icon-"].icon-large {
   width: 1.4285714285714286em;
@@ -858,6 +861,56 @@
 [data-tooltip]:hover:after,
 [data-tooltip]:focus:after {
   visibility: visible;
+}
+/* ==========================================================================
+   overlay
+   ========================================================================== */
+/**
+ * ibnspired on http://www.getuikit.com/docs/overlay.html
+ *
+ * Example HTML:
+ *
+ * <a class="overlay" href="">
+ *   <img src="" alt="">
+ *   <div class="overlay-area"></div>
+ * </a>
+ */
+.overlay {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.overlay-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+  padding: 9px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.overlay:hover .overlay-area {
+  opacity: 1;
+}
+.overlay-area:before {
+  content: "\f002";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  font-size: 50px;
+  line-height: 1;
+  font-family: "FontAwesome";
+  text-align: center;
+  color: #fff;
 }
 body:before {
   content: "";
