@@ -7,6 +7,12 @@
  * this basicaly transforms the normal grid into a "table" with cells
  * each column has an even height
  *
+ * This code has limitations:
+ *   - all columns must account for 100% of the width (aka 12 columns) no gaps
+ *   - no support for push/pull/offset modifier class support
+ *   - the columns are displayed as table-cells, they thus behave like tables, 
+ *     which can cause unwanted behaviour in some cases.
+ *
  * Example HTML:
  *
  * <div class="row row-aligned">
