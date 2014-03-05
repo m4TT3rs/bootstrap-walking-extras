@@ -59,5 +59,63 @@
 		}
 	}
 }
-// TODO: add different orientations (tip to the left/right/centered/bottom/...)
+[data-tooltip][data-placement=left]{
+	&:after {
+		top: 50%;
+		left:auto;
+		right:100%;
+		margin-top: -(@line-height-computed/2 + 3px); //3px is tooltip vertical padding
+		margin-right: (4px + @tooltip-arrow-width);
+	}
+	&:before {
+		top: 50%;
+		left:auto;
+		right:100%;
+		margin-right: 4px;
+
+		border-top: @tooltip-arrow-width solid transparent ;
+		border-left: @tooltip-arrow-width solid @tooltip-arrow-color; 
+		border-bottom: @tooltip-arrow-width solid transparent ;
+		border-right: none;  
+		margin-top: -@tooltip-arrow-width;
+	}
+	
+} 
+[data-tooltip][data-placement=bottom]{
+	&:after {
+		top:auto;
+		bottom: -(4px + 6px + @tooltip-arrow-width + @line-height-computed); // 4px is spacing, 6px is vertical padding
+		left: -20px;
+	}
+	&:before {
+		top:auto;
+		bottom: -(4px + @tooltip-arrow-width);  
+		left: 5px;
+		border-top: none;
+		border-left: @tooltip-arrow-width solid transparent; 
+		border-bottom: @tooltip-arrow-width solid @tooltip-arrow-color ;
+		border-right: @tooltip-arrow-width solid transparent;  
+	}
+	
+} 
+
+[data-tooltip][data-placement=right]{
+	&:after {
+		top: 50%;
+		left:100%;
+		margin-top: -(@line-height-computed/2 + 3px); //3px is tooltip vertical padding
+		margin-left: (4px + @tooltip-arrow-width);
+	}
+	&:before {
+		top: 50%;
+		left:100%;
+		margin-left: 4px;
+
+		border-top: @tooltip-arrow-width solid transparent ;
+		border-right: @tooltip-arrow-width solid @tooltip-arrow-color; 
+		border-bottom: @tooltip-arrow-width solid transparent ;
+		border-left: none;  
+		margin-top: -@tooltip-arrow-width;
+	}
+}
 // TODO: add different sizes? multiline possible somehow?
