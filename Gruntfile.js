@@ -13,6 +13,15 @@ module.exports = function(grunt) {
       dist: ['dist', 'docs/dist']
     },
 
+    csslint: {
+      options: {
+        csslintrc: 'less/.csslintrc'
+      },
+      src: [
+        'dist/css/Bootstrap-walking-extras.css'
+      ]
+    },
+
     concat: {
       opoptions: {
         report: 'min'
@@ -76,10 +85,20 @@ module.exports = function(grunt) {
       }
     },
 
+    watch: {
+      less: {
+        files: 'less/*.less',
+        tasks: 'less'
+      }
+    }
+
 
   });
 
- require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+
+
+  grunt.registerTask('test', ['dist-css','csslint']);
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
@@ -90,4 +109,7 @@ module.exports = function(grunt) {
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
+
+  // Set default task
+  grunt.registerTask('default', ['dist']);
 };
