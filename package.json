@@ -1,0 +1,19 @@
+{
+  "name": "Bootstrap-walking-extras",
+  "version": "1.0.0",
+  "author": "Mattias Bohez",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m4TT3rs/bootstrap-walking-extras.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-banner": "~0.2.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-less": "~0.10.0",
+    "load-grunt-tasks": "~0.4.0"
+  }
+}
