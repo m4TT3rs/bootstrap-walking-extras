@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Responsive modal
+   ========================================================================== */
+
+@media (max-width: @screen-xs-max) {
+    .modal{
+      overflow:hidden;
+
+      &.fade .modal-dialog {
+        .translate(100%, 0 );
+      }
+      &.in .modal-dialog { .translate(0, 0)}
+    }
+    .modal-dialog{
+      margin: 0 0 0 20px;
+      height:100%;
+    }
+    .modal-content{
+      border-radius: 0;
+      height:100%;
+      border:none;
+      // padding-top:56px; // how to set this dynamically
+      // padding-bottom: 74px; // how to set this dynamically
+      position: static;
+    }
+
+    .modal-body{
+      position: relative;
+      height: 100%;
+      overflow: auto;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-footer,
+    .modal-header{
+      position: absolute;
+      width: 100%;
+      background-color: @modal-content-bg;
+      z-index: (@zindex-modal+1);
+    }
+
+    .modal-header{top:0;}
+    .modal-footer{bottom:0;}
+}
