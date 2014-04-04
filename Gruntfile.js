@@ -13,6 +13,15 @@ module.exports = function(grunt) {
       dist: ['dist', 'docs/dist']
     },
 
+    jshint: {
+      options: {
+        jshintrc: 'js/.jshintrc'
+      },
+      src: {
+        src: 'js/*.js'
+      }
+    },
+
     csslint: {
       options: {
         csslintrc: 'less/.csslintrc'
@@ -98,7 +107,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
 
-  grunt.registerTask('test', ['dist-css','csslint']);
+  grunt.registerTask('test', ['dist-css','csslint','jshint']);
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
