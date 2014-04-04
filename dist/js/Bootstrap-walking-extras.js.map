@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "Bootstrap-walking-extras.js",
+  "sources": [
+    "js/modal-responsive.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA",
+  "sourcesContent": [
+    "/* ==========================================================================\r\n   Responsive modal\r\n   ========================================================================== */\r\n\r\n+function ($) {\r\n  'use strict';\r\n\r\n\r\n  // Variables\r\n  // ======================\r\n\r\n  var breakpoint = 767\r\n\r\n\r\n  // Functions\r\n  // ======================\r\n\r\n  var addSpacing = function(modal){\r\n    var modalContent = modal.find('.modal-content')\r\n    var modalHeader  = modal.find('.modal-header')\r\n    var modalFooter  = modal.find('.modal-footer')\r\n\r\n    modalContent.css({\r\n      paddingTop: modalHeader.outerHeight(),\r\n      paddingBottom: modalFooter.outerHeight()\r\n    })\r\n  }\r\n\r\n  var removeSpacing = function(modal){\r\n    var modalContent = modal.find('.modal-content')\r\n\r\n    modalContent.css({\r\n      paddingTop: 'inherit',\r\n      paddingBottom: 'inherit'\r\n    })\r\n  }\r\n\r\n  var resizeHandler = function(){\r\n      if($(window).width() <= breakpoint){\r\n        addSpacing( $('.modal:visible') )\r\n      }\r\n      else{\r\n        removeSpacing( $('.modal:visible') )\r\n      }\r\n  }\r\n\r\n  // Events\r\n  // ======================\r\n\r\n  $(document)\r\n    .on('show.bs.modal', '.modal', function (e) {\r\n      if($(window).width() <= breakpoint){\r\n        setTimeout(function(){\r\n          addSpacing( $(e.currentTarget) )\r\n        },200)\r\n      }\r\n      $(window).on('resize',resizeHandler)\r\n    })\r\n    .on('hidden.bs.modal', '.modal', function (e) { \r\n      if($(window).width() <= breakpoint){\r\n        setTimeout(function(){\r\n          removeSpacing( $(e.currentTarget) )\r\n        },200)\r\n      }\r\n      $(window).off('resize',resizeHandler)\r\n    })\r\n\r\n}(jQuery);\r\n"
+  ]
+}

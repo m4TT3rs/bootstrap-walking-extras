@@ -66,3 +66,5 @@
     })
 
 }(jQuery);
+
+//# sourceMappingURL=Bootstrap-walking-extras.js.map

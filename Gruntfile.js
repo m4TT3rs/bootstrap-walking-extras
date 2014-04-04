@@ -31,14 +31,12 @@ module.exports = function(grunt) {
       ]
     },
 
-    concat: {
-      opoptions: {
-        report: 'min'
+    concat_sourcemap: {
+      options: {
+        sourcesContent: true
       },
       bootstrapWalkingExtras: {
-        src: [
-          'js/modal-responsive.js'
-        ],
+        src: ['js/modal-responsive.js'],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
@@ -49,12 +47,16 @@ module.exports = function(grunt) {
       },
       bootstrapWalkingExtras: {
         options: {
-          banner: '<%= banner %>'
+          banner: '<%= banner %>',
+          compress: {
+            drop_console: true
+          }
         },
-        src: '<%= concat.bootstrapWalkingExtras.dest %>',
+        src: '<%= concat_sourcemap.bootstrapWalkingExtras.dest %>',
         dest: 'dist/js/<%= pkg.name %>.min.js'
       }
     },
+
 
     less: {
       compileCore: {
@@ -110,7 +112,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['dist-css','csslint','jshint']);
 
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat', 'uglify']);
+  grunt.registerTask('dist-js', ['concat_sourcemap','uglify']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore']);
