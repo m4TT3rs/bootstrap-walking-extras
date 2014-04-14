@@ -9,7 +9,7 @@
   // Variables
   // ======================
 
-  var breakpoint = 767
+  var breakpoint = 768
 
 
   // Functions
@@ -36,7 +36,7 @@
   }
 
   var resizeHandler = function(){
-      if($(window).width() <= breakpoint){
+      if($(window).width() < breakpoint){
         addSpacing( $('.modal:visible') )
       }
       else{
@@ -49,7 +49,7 @@
 
   $(document)
     .on('show.bs.modal', '.modal', function (e) {
-      if($(window).width() <= breakpoint){
+      if($(window).width() < breakpoint){
         setTimeout(function(){
           addSpacing( $(e.currentTarget) )
         },200)
@@ -57,7 +57,7 @@
       $(window).on('resize',resizeHandler)
     })
     .on('hidden.bs.modal', '.modal', function (e) { 
-      if($(window).width() <= breakpoint){
+      if($(window).width() < breakpoint){
         setTimeout(function(){
           removeSpacing( $(e.currentTarget) )
         },200)
