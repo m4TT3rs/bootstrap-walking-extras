@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         sourcesContent: true
       },
       bootstrapWalkingExtras: {
-        src: ['js/modal-responsive.js'],
+        src: ['js/breakpoint-events.js','js/modal-responsive.js'],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
     },

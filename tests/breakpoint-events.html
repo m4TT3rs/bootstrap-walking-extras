@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Test responsive modal</title>
+		<!-- Bootstrap core CSS -->
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet" />
+
+		<link href="../dist/css/Bootstrap-walking-extras.css" rel="stylesheet">
+	</head>
+
+	<body>
+		
+		<div class="container">
+			<pre id="log"></pre>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="../js/breakpoint-events.js"></script>
+		<script>
+			jQuery(function($){
+				$(window)
+					.on('breakpoint.screen-xs',function(){
+						$('#log').append('breakpoint.screen-xs triggered (sw: '+$(window).width()+')\n');
+					})
+					.on('breakpoint.screen-sm',function(){
+						$('#log').append('breakpoint.screen-sm triggered (sw: '+$(window).width()+')\n');
+					})
+					.on('breakpoint.screen-md',function(){
+						$('#log').append('breakpoint.screen-md triggered (sw: '+$(window).width()+')\n');
+					})
+					.on('breakpoint.screen-lg',function(){
+						$('#log').append('breakpoint.screen-lg triggered (sw: '+$(window).width()+')\n');
+					});
+			});
+		</script>
+
+	</body>
+</html>

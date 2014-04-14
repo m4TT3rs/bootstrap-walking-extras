@@ -719,6 +719,7 @@
   backface-visibility: hidden;
   /* -- transition is the magic sauce for animation -- */
   -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 .flip-panel.flip > .front,
@@ -726,6 +727,7 @@
   z-index: 10;
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 .flip-panel > .back {
@@ -738,6 +740,7 @@
   height: inherit;
   -webkit-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -748,6 +751,7 @@
   backface-visibility: hidden;
   /* -- transition is the magic sauce for animation -- */
   -webkit-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 .flip-panel.flip > .back,
@@ -766,11 +770,13 @@
 .flip-panel.vertical.hover:hover > .front {
   -webkit-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
   transform: rotateX(180deg);
 }
 .flip-panel.vertical > .back {
   -webkit-transform: rotateX(-180deg);
   -ms-transform: rotateX(-180deg);
+  -o-transform: rotateX(-180deg);
   transform: rotateX(-180deg);
 }
 .flip-panel.vertical.flip > .back,
@@ -838,7 +844,7 @@
   border-radius: 4px;
   white-space: nowrap;
   visibility: hidden;
-  z-index: 1030;
+  z-index: 1070;
 }
 [data-tooltip]:before {
   content: "";
@@ -849,7 +855,7 @@
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   visibility: hidden;
-  z-index: 1030;
+  z-index: 1070;
 }
 [data-tooltip]:hover:before,
 [data-tooltip]:focus:before,
@@ -936,6 +942,7 @@
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
   padding: 9px;
   color: #fff;
@@ -1119,11 +1126,13 @@
   .modal.fade .modal-dialog {
     -webkit-transform: translate(100%, 0);
     -ms-transform: translate(100%, 0);
+    -o-transform: translate(100%, 0);
     transform: translate(100%, 0);
   }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
     transform: translate(0, 0);
   }
   .modal-dialog {
