@@ -574,48 +574,6 @@
   }
 }
 /* ==========================================================================
-   Flexible media embeds
-   ========================================================================== */
-/**
- * Flexible media embeds
- *
- * For use with media embeds – such as videos, slideshows, or even images –
- * that need to retain a specific aspect ratio but adapt to the width of their
- * containing element.
- *
- * inspired on http://foundation.zurb.com/docs/components/flex_video.html
- *
- * Example HTML:
- *
- * <div class="flex-video flex-video-widescreen">
- *     [iframe|object|embed|img]
- * </div>
- */
-.flex-video {
-  position: relative;
-  padding-top: 0;
-  padding-bottom: 75%;
-  height: 0;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-.flex-video iframe,
-.flex-video object,
-.flex-video embed,
-.flex-video video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.flex-video-youtube {
-  padding-top: 25px;
-}
-.flex-video-widescreen {
-  padding-bottom: 56.25%;
-}
-/* ==========================================================================
    button with an icon
    ========================================================================== */
 /**
