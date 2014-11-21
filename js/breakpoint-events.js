@@ -25,7 +25,7 @@
     for(var bp in breakpoints){
       if(thisWidth >= breakpoints[bp] && ( !prevBp || thisWidth < breakpoints[prevBp] )){
         if(
-             previousWindowWidth < breakpoints[bp] 
+             previousWindowWidth < breakpoints[bp]
           || previousWindowWidth >= breakpoints[prevBp]
           ){
           bpToTrigger = bp

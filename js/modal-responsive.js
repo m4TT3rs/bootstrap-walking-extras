@@ -56,7 +56,7 @@
       }
       $(window).on('resize',resizeHandler)
     })
-    .on('hidden.bs.modal', '.modal', function (e) { 
+    .on('hidden.bs.modal', '.modal', function (e) {
       if($(window).width() < breakpoint){
         setTimeout(function(){
           removeSpacing( $(e.currentTarget) )
