@@ -8,7 +8,7 @@
  * note: default BS grid columns are already relative.
  *
  * limitation: when both a left and right ruler are used in adjacent blocks
- *             semi transparent (rgba) can give unwanted effects as 2 lines 
+ *             semi transparent (rgba) can give unwanted effects as 2 lines
  *             are stacked one atop the other.
  *
  * Example HTML:
@@ -26,7 +26,8 @@
   height: 100%;
   margin: 0;
 }
-.vertical-ruler-left{
+.vertical-ruler-left,
+.vertical-ruler:first-child{
   right: auto;
   left:-1px;
 }
