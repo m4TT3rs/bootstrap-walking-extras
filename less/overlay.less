@@ -28,13 +28,16 @@
   right: 0;
   background: #666;
   background: @overlay-area-bg;
-  opacity: 0;
   .transition(opacity .15s linear);
   padding: @overlay-area-padding;
   color: #fff;
   color: @overlay-area-color;
 }
-.overlay:hover .overlay-area{
+.overlay .overlay-area{
+  opacity: 0;
+}
+.overlay:hover .overlay-area,
+.overlay-area.in{
   opacity: 1;
 }
 .overlay-icon{
