@@ -1,0 +1,98 @@
+/* ==========================================================================
+   date icon
+   ========================================================================== */
+
+/**
+ * inspired on http://www.sitepoint.com/create-calendar-icon-html5-css3/
+ *
+ * Example HTML:
+ *
+ * <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-lg">
+ *     <em>December</em>
+ *     <strong>2014</strong>
+ *     <span>23</span>
+ * </time>
+ */
+ .date-icon
+ {
+   display: inline-block;
+   position: relative;
+   width: 6em;
+   height: 6em;
+   background-color: @date-bg-color;
+   border-radius: 0.6em;
+   border:1px solid @date-border-color;
+   box-shadow: 0 1px 0 @date-bg-color, 0 2px 0 @date-border-color, 0 3px 0 @date-bg-color, 0 4px 0 @date-border-color;
+   overflow: hidden;
+
+   > *{
+     display: block;
+     width: 100%;
+     font-size: 1em;
+     font-weight: bold;
+     font-style: normal;
+     text-align: center;
+   }
+   > strong{
+     position: absolute;
+     top: 0;
+     padding: 0em 0;
+     color: #fff;
+     //background-color: @date-default-color;
+     //border-bottom: 1px dashed darken(@date-default-color,12%);
+     //box-shadow: 0 1px 0 @date-default-color;
+   }
+   > em{
+     position: absolute;
+     bottom: 0em;
+     //color: @date-default-color;
+     font-size: .85715em;
+   }
+   > span{
+     font-size: 2.4em;
+     letter-spacing: -0.05em;
+     padding-top: 0.7em;
+   }
+ }
+
+
+ // sizes
+.date-icon-xs{
+   font-size:.6em;
+   border-radius: .8em;
+}
+.date-icon-sm{
+   font-size:.75em;
+   border-radius: .7em;
+}
+//.date-icon-md{} //<- default size
+.date-icon-lg{
+  font-size:1.33334em;
+  border-radius: .5em;
+}
+
+ // Colors
+ // Contextual variations
+ .date-icon-default {
+   .date-variant(@date-default-color);
+ }
+
+ .date-icon-primary {
+   .date-variant(@date-primary-color);
+ }
+
+ .date-icon-success {
+   .date-variant(@date-success-color);
+ }
+
+ .date-icon-info {
+   .date-variant(@date-info-color);
+ }
+
+ .date-icon-warning {
+   .date-variant(@date-warning-color);
+ }
+
+ .date-icon-danger {
+   .date-variant(@date-danger-color);
+ }

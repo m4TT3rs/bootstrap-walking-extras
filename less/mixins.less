@@ -39,3 +39,14 @@
     color:@color;
   }
 }
+
+.date-variant(@color) {
+  > strong{
+    background-color: @color;
+    border-bottom:1px dashed darken(@color,12%);
+    box-shadow: 0 1px 0 @color;
+  }
+  > em{
+    color: @color;
+  }
+}

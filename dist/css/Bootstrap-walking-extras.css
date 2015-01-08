@@ -1178,7 +1178,7 @@
    Stat(istic)
    ========================================================================== */
 /**
- * inspired on http://www.getuikit.com/docs/overlay.html
+ * inspired on http://semantic-ui.com/views/statistic.html
  *
  * Example HTML:
  *
@@ -1266,6 +1266,115 @@ a.stat:focus {
   color: #f0ad4e;
 }
 .stat-danger > .stat-value {
+  color: #d9534f;
+}
+/* ==========================================================================
+   date icon
+   ========================================================================== */
+/**
+ * inspired on http://www.sitepoint.com/create-calendar-icon-html5-css3/
+ *
+ * Example HTML:
+ *
+ * <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-lg">
+ *     <em>December</em>
+ *     <strong>2014</strong>
+ *     <span>23</span>
+ * </time>
+ */
+.date-icon {
+  display: inline-block;
+  position: relative;
+  width: 6em;
+  height: 6em;
+  background-color: #ffffff;
+  border-radius: 0.6em;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 1px 0 #ffffff, 0 2px 0 #eeeeee, 0 3px 0 #ffffff, 0 4px 0 #eeeeee;
+  overflow: hidden;
+}
+.date-icon > * {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+}
+.date-icon > strong {
+  position: absolute;
+  top: 0;
+  padding: 0em 0;
+  color: #fff;
+}
+.date-icon > em {
+  position: absolute;
+  bottom: 0em;
+  font-size: .85715em;
+}
+.date-icon > span {
+  font-size: 2.4em;
+  letter-spacing: -0.05em;
+  padding-top: 0.7em;
+}
+.date-icon-xs {
+  font-size: .6em;
+  border-radius: .8em;
+}
+.date-icon-sm {
+  font-size: .75em;
+  border-radius: .7em;
+}
+.date-icon-lg {
+  font-size: 1.33334em;
+  border-radius: .5em;
+}
+.date-icon-default > strong {
+  background-color: #777777;
+  border-bottom: 1px dashed #585858;
+  box-shadow: 0 1px 0 #777777;
+}
+.date-icon-default > em {
+  color: #777777;
+}
+.date-icon-primary > strong {
+  background-color: #428bca;
+  border-bottom: 1px dashed #2d6ca2;
+  box-shadow: 0 1px 0 #428bca;
+}
+.date-icon-primary > em {
+  color: #428bca;
+}
+.date-icon-success > strong {
+  background-color: #5cb85c;
+  border-bottom: 1px dashed #419641;
+  box-shadow: 0 1px 0 #5cb85c;
+}
+.date-icon-success > em {
+  color: #5cb85c;
+}
+.date-icon-info > strong {
+  background-color: #5bc0de;
+  border-bottom: 1px dashed #2aabd2;
+  box-shadow: 0 1px 0 #5bc0de;
+}
+.date-icon-info > em {
+  color: #5bc0de;
+}
+.date-icon-warning > strong {
+  background-color: #f0ad4e;
+  border-bottom: 1px dashed #eb9316;
+  box-shadow: 0 1px 0 #f0ad4e;
+}
+.date-icon-warning > em {
+  color: #f0ad4e;
+}
+.date-icon-danger > strong {
+  background-color: #d9534f;
+  border-bottom: 1px dashed #c12e2a;
+  box-shadow: 0 1px 0 #d9534f;
+}
+.date-icon-danger > em {
   color: #d9534f;
 }
 /* ==========================================================================
