@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Stat(istic)
+   ========================================================================== */
+
+/**
+ * inspired on http://www.getuikit.com/docs/overlay.html
+ *
+ * Example HTML:
+ *
+ * <div class="stat">
+ *   <div class="stat-value">
+ *       123
+ *   </div>
+ * </div>
+ */
+.stat {
+  display: inline-block;
+  //max-width: 200px;
+  margin: 0 .25em;
+  &.pull-left{
+    margin: 0 2em 1em 0;
+  }
+  &.pull-right{
+    margin: 0 0 1em 2em;
+  }
+}
+a.stat{
+  &:hover,
+  &:focus{
+    text-decoration:none;
+  }
+}
+
+.stat-value,
+.stat-label{
+  text-align: center;
+  display:block;
+}
+.stat-value{
+  font-size:4em;
+  line-height: .9em;
+  //color: @stat-default-color;
+  //font-variant: small-caps;
+  text-transform: uppercase;
+  > .glyphicon{
+    font-size:.8em; //make icons slightly smaler so they visualy align with numbers
+  }
+  > small{
+    font-size:0.5em;
+  }
+}
+.stat-label{
+  opacity:0.8;
+}
+
+
+// variations
+.stat-horizontal{
+  display: block;
+  max-width: 9999px;
+  margin: 0;
+
+  > .stat-value,
+  > .stat-label{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  > .stat-label{
+    margin: 0 .25em;
+    text-align: right;
+
+    &:first-child{
+      margin-left: 0;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  > .stat-value ~ .stat-label{
+    text-align: left;
+  }
+}
+
+// sizes
+.stat-xs > .stat-value{font-size:2em;}
+.stat-sm > .stat-value{font-size:3em;}
+//.stat-md > .stat-value{font-size:4em;} //<- default size
+.stat-lg > .stat-value{font-size:6em;}
+
+// Colors
+// Contextual variations
+.stat-primary {
+  .stat-variant(@stat-primary-color);
+}
+
+.stat-success {
+  .stat-variant(@stat-success-color);
+}
+
+.stat-info {
+  .stat-variant(@stat-info-color);
+}
+
+.stat-warning {
+  .stat-variant(@stat-warning-color);
+}
+
+.stat-danger {
+  .stat-variant(@stat-danger-color);
+}

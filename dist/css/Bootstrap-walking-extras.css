@@ -1,8 +1,3 @@
-/*!
- * Bootstrap-walking-extras v1.0.0
- * Copyright 2013-2014 Mattias Bohez
- */
-
 /* ==========================================================================
    Block grids
    ========================================================================== */
@@ -949,7 +944,6 @@
   right: 0;
   background: #666;
   background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
   -webkit-transition: opacity 0.15s linear;
   -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
@@ -957,7 +951,11 @@
   color: #fff;
   color: rgba(255, 255, 255, 0.6);
 }
-.overlay:hover .overlay-area {
+.overlay .overlay-area {
+  opacity: 0;
+}
+.overlay:hover .overlay-area,
+.overlay-area.in {
   opacity: 1;
 }
 .overlay-icon {
@@ -981,7 +979,7 @@
  * This code has limitations:
  *   - all columns must account for 100% of the width (aka 12 columns) no gaps
  *   - no support for push/pull/offset modifier class support
- *   - the columns are displayed as table-cells, they thus behave like tables, 
+ *   - the columns are displayed as table-cells, they thus behave like tables,
  *     which can cause unwanted behaviour in some cases.
  *
  * Example HTML:
@@ -1104,7 +1102,7 @@
  * note: default BS grid columns are already relative.
  *
  * limitation: when both a left and right ruler are used in adjacent blocks
- *             semi transparent (rgba) can give unwanted effects as 2 lines 
+ *             semi transparent (rgba) can give unwanted effects as 2 lines
  *             are stacked one atop the other.
  *
  * Example HTML:
@@ -1121,7 +1119,8 @@
   height: 100%;
   margin: 0;
 }
-.vertical-ruler-left {
+.vertical-ruler-left,
+.vertical-ruler:first-child {
   right: auto;
   left: -1px;
 }
@@ -1166,7 +1165,7 @@
     position: absolute;
     width: 100%;
     background-color: #ffffff;
-    z-index: 1041;
+    z-index: 1051;
   }
   .modal-header {
     top: 0;
@@ -1174,6 +1173,100 @@
   .modal-footer {
     bottom: 0;
   }
+}
+/* ==========================================================================
+   Stat(istic)
+   ========================================================================== */
+/**
+ * inspired on http://www.getuikit.com/docs/overlay.html
+ *
+ * Example HTML:
+ *
+ * <div class="stat">
+ *   <div class="stat-value">
+ *       123
+ *   </div>
+ * </div>
+ */
+.stat {
+  display: inline-block;
+  margin: 0 .25em;
+}
+.stat.pull-left {
+  margin: 0 2em 1em 0;
+}
+.stat.pull-right {
+  margin: 0 0 1em 2em;
+}
+a.stat:hover,
+a.stat:focus {
+  text-decoration: none;
+}
+.stat-value,
+.stat-label {
+  text-align: center;
+  display: block;
+}
+.stat-value {
+  font-size: 4em;
+  line-height: .9em;
+  text-transform: uppercase;
+}
+.stat-value > .glyphicon {
+  font-size: .8em;
+}
+.stat-value > small {
+  font-size: 0.5em;
+}
+.stat-label {
+  opacity: 0.8;
+}
+.stat-horizontal {
+  display: block;
+  max-width: 9999px;
+  margin: 0;
+}
+.stat-horizontal > .stat-value,
+.stat-horizontal > .stat-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+.stat-horizontal > .stat-label {
+  margin: 0 .25em;
+  text-align: right;
+}
+.stat-horizontal > .stat-label:first-child {
+  margin-left: 0;
+}
+.stat-horizontal > .stat-label:last-child {
+  margin-right: 0;
+}
+.stat-horizontal > .stat-value ~ .stat-label {
+  text-align: left;
+}
+.stat-xs > .stat-value {
+  font-size: 2em;
+}
+.stat-sm > .stat-value {
+  font-size: 3em;
+}
+.stat-lg > .stat-value {
+  font-size: 6em;
+}
+.stat-primary > .stat-value {
+  color: #428bca;
+}
+.stat-success > .stat-value {
+  color: #5cb85c;
+}
+.stat-info > .stat-value {
+  color: #5bc0de;
+}
+.stat-warning > .stat-value {
+  color: #f0ad4e;
+}
+.stat-danger > .stat-value {
+  color: #d9534f;
 }
 /* ==========================================================================
    Spacing-specific utilities
@@ -2028,9 +2121,9 @@
    Responsive version of some BS utilities
    ========================================================================== */
 /**
- * 
+ *
  * - Responsive versions of the .pull-left and .pull-right classes
- * - a .clear class that simply clears the floats (with responsive version) 
+ * - a .clear class that simply clears the floats (with responsive version)
  *
  */
 .pull-xs-right {
