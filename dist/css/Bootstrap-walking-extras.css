@@ -1378,6 +1378,168 @@ a.stat:focus {
   color: #d9534f;
 }
 /* ==========================================================================
+   Styled checkboxes
+   ========================================================================== */
+/**
+ * inspired on http://codepen.io/CreativeJuiz/pen/BiHzp
+ *
+ * Example HTML:
+ *
+ * <div class="checkbox">
+ *   <label class="checkbox-styled">
+ *     <input type="checkbox" value="">
+ *     <i></i> <!-- it is very important to have any element after the input field -->
+ *     ...
+ *   </label>
+ * </div>
+ *
+ * OR
+ *
+ * <label class="checkbox-inline checkbox-styled">
+ *   <input type="checkbox" id="test1" />
+ *   <i></i> <!-- it is very important to have any element after the input field -->
+ *   ...
+ * </label>
+ *
+ */
+/* Base for label styling */
+.checkbox-styled {
+  /* checkbox aspect */
+  /* checked mark aspect */
+  /* checked mark aspect changes */
+  /* disabled checkbox */
+  /* accessibility */
+  /* hover style just for information */
+}
+.checkbox-styled [type="checkbox"]:not(:checked),
+.checkbox-styled [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+.checkbox-styled [type="checkbox"]:not(:checked) + *,
+.checkbox-styled [type="checkbox"]:checked + * {
+  position: relative;
+  left: -20px;
+  cursor: pointer;
+}
+.checkbox-styled [type="checkbox"]:not(:checked) + *:before,
+.checkbox-styled [type="checkbox"]:checked + *:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.checkbox-styled [type="checkbox"]:not(:checked) + *:after,
+.checkbox-styled [type="checkbox"]:checked + *:after {
+  content: '✔';
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  font-size: 14px;
+  color: #555555;
+  transition: all .15s;
+}
+.checkbox-styled [type="checkbox"]:not(:checked) + *:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.checkbox-styled [type="checkbox"]:checked + *:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.checkbox-styled [type="checkbox"]:disabled:not(:checked) + *:before,
+.checkbox-styled [type="checkbox"]:disabled:checked + *:before {
+  box-shadow: none;
+  border-color: #cccccc;
+  background-color: #eeeeee;
+}
+.checkbox-styled [type="checkbox"]:disabled:checked + *:after {
+  color: #959595;
+}
+.checkbox-styled [type="checkbox"]:checked:focus + *:before,
+.checkbox-styled [type="checkbox"]:not(:checked):focus + *:before {
+  border: 1px solid #66afe9;
+}
+.checkbox-styled [type="checkbox"]:not(:disabled) + *:hover:before,
+.checkbox-styled:hover [type="checkbox"]:not(:disabled) + *:before {
+  border: 1px solid #66afe9;
+}
+.radio-styled {
+  /* radio aspect */
+  /* checked mark aspect */
+  /* checked mark aspect changes */
+  /* disabled radio */
+  /* accessibility */
+  /* hover style just for information */
+}
+.radio-styled [type="radio"]:not(:checked),
+.radio-styled [type="radio"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+.radio-styled [type="radio"]:not(:checked) + *,
+.radio-styled [type="radio"]:checked + * {
+  position: relative;
+  left: -20px;
+  cursor: pointer;
+}
+.radio-styled [type="radio"]:not(:checked) + *:before,
+.radio-styled [type="radio"]:checked + *:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  border-radius: 7px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.radio-styled [type="radio"]:not(:checked) + *:after,
+.radio-styled [type="radio"]:checked + *:after {
+  content: '●';
+  position: absolute;
+  top: -3px;
+  left: 2px;
+  font-size: 15px;
+  color: #555555;
+  transition: all .15s;
+}
+.radio-styled [type="radio"]:not(:checked) + *:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.radio-styled [type="radio"]:checked + *:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.radio-styled [type="radio"]:disabled:not(:checked) + *:before,
+.radio-styled [type="radio"]:disabled:checked + *:before {
+  box-shadow: none;
+  border-color: #cccccc;
+  background-color: #eeeeee;
+}
+.radio-styled [type="radio"]:disabled:checked + *:after {
+  color: #959595;
+}
+.radio-styled [type="radio"]:checked:focus + *:before,
+.radio-styled [type="radio"]:not(:checked):focus + *:before {
+  border: 1px solid #66afe9;
+}
+.radio-styled [type="radio"]:not(:disabled) + *:hover:before,
+.radio-styled:hover [type="radio"]:not(:disabled) + *:before {
+  border: 1px solid #66afe9;
+}
+/* ==========================================================================
    Spacing-specific utilities
    ========================================================================== */
 /**
