@@ -1,3 +1,8 @@
+/*!
+ * Bootstrap-walking-extras v1.0.1
+ * Copyright 2013-2015 Mattias Bohez
+ */
+
 /* ==========================================================================
    Block grids
    ========================================================================== */
@@ -1433,6 +1438,12 @@ a.stat:focus {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .checkbox-styled [type="checkbox"]:not(:checked) + *:after,
 .checkbox-styled [type="checkbox"]:checked + *:after,

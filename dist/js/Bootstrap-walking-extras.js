@@ -25,7 +25,7 @@
     for(var bp in breakpoints){
       if(thisWidth >= breakpoints[bp] && ( !prevBp || thisWidth < breakpoints[prevBp] )){
         if(
-             previousWindowWidth < breakpoints[bp] 
+             previousWindowWidth < breakpoints[bp]
           || previousWindowWidth >= breakpoints[prevBp]
           ){
           bpToTrigger = bp
@@ -105,7 +105,7 @@
       }
       $(window).on('resize',resizeHandler)
     })
-    .on('hidden.bs.modal', '.modal', function (e) { 
+    .on('hidden.bs.modal', '.modal', function (e) {
       if($(window).width() < breakpoint){
         setTimeout(function(){
           removeSpacing( $(e.currentTarget) )
