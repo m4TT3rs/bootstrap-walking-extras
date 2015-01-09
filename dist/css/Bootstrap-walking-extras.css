@@ -1425,6 +1425,7 @@ a.stat:focus {
   width: 13px;
   height: 13px;
   border: 1px solid #cccccc;
+  color: #555555;
   background: #ffffff;
   border-radius: 3px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1440,7 +1441,6 @@ a.stat:focus {
   position: absolute;
   top: -5px;
   font-size: 14px;
-  color: #555555;
   width: 100%;
   text-align: center;
   font-style: normal;
@@ -1458,6 +1458,7 @@ a.stat:focus {
   border-color: #cccccc;
   background-color: #eeeeee;
   color: #959595;
+  cursor: not-allowed;
 }
 .checkbox-styled [type="checkbox"]:not(:checked):focus + *,
 .checkbox-styled [type="checkbox"]:checked:focus + *,
