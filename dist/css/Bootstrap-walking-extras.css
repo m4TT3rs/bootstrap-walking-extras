@@ -1554,6 +1554,8 @@ a.stat:focus {
   right: 0px;
   background-color: #d9534f;
   border-radius: 13px;
+  -webkit-transition: background 0.4s;
+  -o-transition: background 0.4s;
   transition: background 0.4s;
 }
 .checkbox-styled-toggle [type="checkbox"]:not(:checked) + *:after,
@@ -1567,6 +1569,8 @@ a.stat:focus {
   background-color: #fff;
   border-radius: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-transition: margin 0.4s;
+  -o-transition: margin 0.4s;
   transition: margin 0.4s;
 }
 .checkbox-styled-toggle [type="checkbox"]:not(:checked):disabled + *:before,
