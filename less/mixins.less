@@ -50,3 +50,65 @@
     color: @color;
   }
 }
+
+.stripe(@leftBackground ; @rightBackground){
+  overflow-x:hidden;
+
+  > .container{
+    position: relative;
+
+    &:before,
+    &:after{
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      content:'';
+      display:block;
+      width: 480px;
+    }
+    &:after{
+      left: 100%;
+      background: @rightBackground;
+      background-position:top left;
+      margin-left: -1px; // one pixel overlap is needed when a row-aligned is used inside .container
+    }
+    &:before{
+      right: 100%;
+      background: @leftBackground;
+      background-position:top right;
+      margin-right: -1px; // one pixel overlap is needed when a row-aligned is used inside .container
+    }
+  }
+}
+
+
+.get-top-value (@def){
+  @top-value: extract(@def,1);
+}
+
+.get-right-value (@def) when (length(@def) >= 2){
+  @right-value: extract(@def,2);
+}
+.get-right-value (@def){
+  @right-value: extract(@def,1);
+}
+
+.get-left-value (@def) when (length(@def) = 4){
+  @left-value: extract(@def,4);
+}
+.get-left-value (@def) when (length(@def) = 3){
+  @left-value: extract(@def,2);
+}
+.get-left-value (@def) when (length(@def) = 2){
+  @left-value: extract(@def,2);
+}
+.get-left-value (@def){
+  @left-value: extract(@def,1);
+}
+
+.get-bottom-value (@def) when (length(@def) >= 3){
+  @bottom-value: extract(@def,3);
+}
+.get-bottom-value (@def){
+  @bottom-value: extract(@def,1);
+}

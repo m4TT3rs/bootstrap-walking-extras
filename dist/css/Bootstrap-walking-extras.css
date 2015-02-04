@@ -1,8 +1,3 @@
-/*!
- * Bootstrap-walking-extras v1.0.1
- * Copyright 2013-2015 Mattias Bohez
- */
-
 /* ==========================================================================
    Block grids
    ========================================================================== */
@@ -1637,6 +1632,33 @@ a.stat:focus {
 .radio .checkbox-styled-toggle.checkbox-styled-lg,
 .checkbox .checkbox-styled-toggle.checkbox-styled-lg {
   padding-left: 59px;
+}
+.stripe-demo {
+  overflow-x: hidden;
+}
+.stripe-demo > .container {
+  position: relative;
+}
+.stripe-demo > .container:before,
+.stripe-demo > .container:after {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: '';
+  display: block;
+  width: 480px;
+}
+.stripe-demo > .container:after {
+  left: 100%;
+  background: #ffc0cb;
+  background-position: top left;
+  margin-left: -1px;
+}
+.stripe-demo > .container:before {
+  right: 100%;
+  background: #afeeee;
+  background-position: top right;
+  margin-right: -1px;
 }
 /* ==========================================================================
    Spacing-specific utilities
