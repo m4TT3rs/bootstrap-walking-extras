@@ -16,8 +16,9 @@
     "grunt-contrib-less": "~0.10.0",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt-contrib-watch": "~0.5.3",
-    "styledocco": "https://github.com/m4TT3rs/styledocco/archive/v0.6.7.tar.gz",
+    "grunt-gh-pages": "^0.9.1",
     "grunt-styleguide": "^0.2.17",
-    "load-grunt-tasks": "~0.4.0"
+    "load-grunt-tasks": "~0.4.0",
+    "styledocco": "https://github.com/m4TT3rs/styledocco/archive/v0.6.7.tar.gz"
   }
 }

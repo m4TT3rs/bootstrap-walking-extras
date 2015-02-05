@@ -19,3 +19,4 @@ $RECYCLE.BIN/
 # Folders to ignore
 node_modules
 bower_components
+.grunt
