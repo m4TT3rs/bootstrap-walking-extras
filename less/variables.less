@@ -1,4 +1,28 @@
-// responsive positioning
+/*
+Available Variables
+===================
+*/
+
+/*
+## Responsive positioning
+
+These variables control how the spacing defined in the Positioning-responsive classes.
+By default it is set to the gid-gutter-width defined in bootstrap
+
+```css
+@positioning-size-xs-horizontal: 	@grid-gutter-width;
+@positioning-size-xs-vertical: 		@grid-gutter-width;
+
+@positioning-size-sm-horizontal: 	@grid-gutter-width;
+@positioning-size-sm-vertical: 		@grid-gutter-width;
+
+@positioning-size-md-horizontal: 	@grid-gutter-width;
+@positioning-size-md-vertical: 		@grid-gutter-width;
+
+@positioning-size-lg-horizontal: 	@grid-gutter-width;
+@positioning-size-lg-vertical: 		@grid-gutter-width;
+```
+*/
 @positioning-size-xs-horizontal: 	@grid-gutter-width;
 @positioning-size-xs-vertical: 		@grid-gutter-width;
 
@@ -11,20 +35,49 @@
 @positioning-size-lg-horizontal: 	@grid-gutter-width;
 @positioning-size-lg-vertical: 		@grid-gutter-width;
 
-// overlays
+/*
+## Overlays
+
+These variables control styling aspects of the Overlay
+
+```css
+@overlay-area-padding: 				@thumbnail-caption-padding;
+@overlay-area-color: 				rgba(255,255,255,0.6);
+@overlay-area-bg: 					rgba(0,0,0,0.3);
+@overlay-icon-size: 				4em;
+```
+*/
 @overlay-area-padding: 				@thumbnail-caption-padding;
 @overlay-area-color: 				rgba(255,255,255,0.6);
 @overlay-area-bg: 					rgba(0,0,0,0.3);
 @overlay-icon-size: 				4em;
 
-// flip panels
+/*
+## Overlays
+
+These variables control the default size of a flip panel
+
+```css
+@flip-panel-base-width: 			200px;
+@flip-panel-base-height: 			200px;
+```
+*/
 @flip-panel-base-width: 			200px;
 @flip-panel-base-height: 			200px;
 
-// fontAwesome integration
-@fa-css-prefix:       fa;
+/*
+## Stat
 
-// stat
+These variables control the Stat colors
+
+```css
+@stat-primary-color:           @brand-primary;
+@stat-success-color:           @brand-success;
+@stat-info-color:              @brand-info;
+@stat-warning-color:           @brand-warning;
+@stat-danger-color:            @brand-danger;
+```
+*/
 @stat-primary-color:           @brand-primary;
 @stat-success-color:           @brand-success;
 @stat-info-color:              @brand-info;
@@ -32,7 +85,11 @@
 @stat-danger-color:            @brand-danger;
 
 
-// date
+/*
+## Stat
+
+These variables control the Date styles 
+```css
 @date-border-color:            @gray-lighter;
 @date-bg-color:                #fff;
 @date-default-color:           @gray-light;
@@ -41,3 +98,17 @@
 @date-info-color:              @brand-info;
 @date-warning-color:           @brand-warning;
 @date-danger-color:            @brand-danger;
+```
+*/
+@date-border-color:            @gray-lighter;
+@date-bg-color:                #fff;
+@date-default-color:           @gray-light;
+@date-primary-color:           @brand-primary;
+@date-success-color:           @brand-success;
+@date-info-color:              @brand-info;
+@date-warning-color:           @brand-warning;
+@date-danger-color:            @brand-danger;
+
+
+    // fontAwesome integration
+@fa-css-prefix:       fa;

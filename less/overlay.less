@@ -1,19 +1,58 @@
-/* ==========================================================================
-   overlay
-   ========================================================================== */
+/* 
+Overlay
+=======
 
-/**
- * inspired on http://www.getuikit.com/docs/overlay.html
- *
- * Example HTML:
- *
- * <a class="overlay" href="">
- *   <img src="" alt="">
- *   <div class="overlay-area">
- *     <i class="overlay-icon ..."></i>
- *   </div>
- * </a>
- */
+*inspired on http://www.getuikit.com/docs/overlay.html*
+
+## With an icon
+    <a class="overlay" href="">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        <i class="overlay-icon glyphicon glyphicon-play"></i>
+      </div>
+    </a>
+
+## With text
+    <a class="overlay" href="">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lorem et quam ullamcorper lobortis. Praesent in tellus sem. Cras sollicitudin dui id purus scelerisque, eu aliquet massa posuere.
+      </div>
+    </a>
+
+## with an image
+    <div class="overlay">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        <img src="http://placehold.it/180x180" height="180" width="180" alt="">
+      </div>
+    </div>
+
+## with complex elements
+    <div class="overlay">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        <div class="btn-group" style="position:absolute;bottom:5px;right:5px;">
+            <a class="btn btn-default" href="#"><i class="glyphicon glyphicon-download"></i></a>
+            <a class="btn btn-default" href="#"><i class="glyphicon glyphicon-star"></i></a>
+            <a class="btn btn-default" href="#"><i class="glyphicon glyphicon-heart"></i></a>
+        </div>
+      </div>
+    </div>
+
+## Non image
+
+You can overlay Any content, it does not have to be an image
+
+    <div class="overlay">
+      <p>Donec tincidunt, risus id euismod hendrerit, odio nunc rhoncus dolor, a scelerisque lectus metus sit amet lectus. Donec ornare est a quam varius mollis.</p>
+        <ul><li>Vivamus euismod</li><li>Cras ac fermentum</li></ul>
+      <div class="overlay-area">
+        <i class="overlay-icon glyphicon glyphicon-heart"></i>
+      </div>
+    </div>
+
+*/
 .overlay {
   display: inline-block;
   position: relative;

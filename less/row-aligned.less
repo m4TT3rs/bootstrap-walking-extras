@@ -1,24 +1,54 @@
-/* ==========================================================================
-   An aligned row alternative
-   ========================================================================== */
+/*
 
-/**
- * Modifier for the default bootstrap 3 grid that has its contents aligned
- * this basicaly transforms the normal grid into a "table" with cells
- * each column has an even height
- *
- * This code has limitations:
- *   - all columns must account for 100% of the width (aka 12 columns) no gaps
- *   - no support for push/pull/offset modifier class support
- *   - the columns are displayed as table-cells, they thus behave like tables,
- *     which can cause unwanted behaviour in some cases.
- *
- * Example HTML:
- *
- * <div class="row row-aligned">
- *     <div class="col-<breakpoint>-<size> col-<breakpoint>-<alignment>">...</div>
- * </div>
- */
+An aligned row alternative
+==========================
+Modifier for the default bootstrap 3 grid that has its contents aligned
+this basicaly transforms the normal grid into a "table" with cells
+each column has an even height
+
+This code has limitations:
+-  all columns must account for 100% of the width (aka 12 columns) no gaps
+-  no support for push/pull/offset modifier class support
+-  the columns are displayed as table-cells, they thus behave like tables,
+ which can cause unwanted behaviour in some cases.
+
+
+    <div class="row row-aligned">
+        <div class="col-BREAKPOINT-COLUMNS col-BREAKPOINT-ALIGNMENT">...</div>
+    </div>
+
+
+Breakpoint:
+-  xs = small spartphones
+-  sm = tablets
+-  md = small desktop
+-  lg = large desktop
+
+Columns:
+-  1-12 = number of columns
+
+Alignment: (this is the vertical alignment within a column)
+-  top
+-  middle
+-  bottom
+
+## alignment example
+
+    <div class="row row-aligned">
+        <div class="col-xs-4 col-xs-top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lorem et quam ullamcorper lobortis. Praesent in tellus sem. Cras sollicitudin dui id purus scelerisque, eu aliquet massa posuere. Curabitur efficitur ante sit amet arcu feugiat feugiat. Aliquam ultricies ullamcorper scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas semper lorem quis vestibulum.</div>
+        <div class="col-xs-4 col-xs-middle">Maecenas scelerisque urna in efficitur tincidunt. Vivamus euismod diam condimentum nisi malesuada, nec ornare purus iaculis. Nullam nulla massa, sollicitudin vel orci vitae</div>
+        <div class="col-xs-4 col-xs-bottom">Vivamus eros ex, lacinia eu nisi sit amet, aliquet volutpat magna. Donec tincidunt, risus id euismod hendrerit, odio nunc rhoncus dolor</div>
+    </div>
+
+## Background color examle
+
+    <div class="row row-aligned">
+        <div class="col-xs-4 col-xs-top" style="background:pink">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+        <div class="col-xs-4 col-xs-middle" style="background:beige">Maecenas scelerisque urna in efficitur tincidunt. Vivamus euismod diam condimentum nisi malesuada, nec ornare purus iaculis. Nullam nulla massa, sollicitudin vel orci vitae</div>
+        <div class="col-xs-4 col-xs-bottom" style="background:lightBlue">Vivamus eros ex.</div>
+    </div>
+
+*/
 
 .row-aligned{
   display:table;

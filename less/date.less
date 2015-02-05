@@ -1,18 +1,17 @@
-/* ==========================================================================
-   date icon
-   ========================================================================== */
+/*
+Date icon
+=========
 
-/**
- * inspired on http://www.sitepoint.com/create-calendar-icon-html5-css3/
- *
- * Example HTML:
- *
- * <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-lg">
- *     <em>December</em>
- *     <strong>2014</strong>
- *     <span>23</span>
- * </time>
- */
+*inspired on http://www.sitepoint.com/create-calendar-icon-html5-css3/*
+
+
+    <time datetime="2014-12-23" class="date-icon date-icon-default">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+
+*/
  .date-icon
  {
    display: inline-block;
@@ -56,7 +55,31 @@
  }
 
 
- // sizes
+/*
+## different sizes
+
+    <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-xs">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-sm">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-default">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-lg">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+
+*/
 .date-icon-xs{
    font-size:.6em;
    border-radius: .8em;
@@ -65,14 +88,47 @@
    font-size:.75em;
    border-radius: .7em;
 }
-//.date-icon-md{} //<- default size
+    //.date-icon-md{} //<- default size
 .date-icon-lg{
   font-size:1.33334em;
   border-radius: .5em;
 }
 
- // Colors
- // Contextual variations
+/*
+## Color variations
+
+    <time datetime="2014-12-23" class="date-icon date-icon-default">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-primary">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-success">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-info">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-warning">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-danger">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+
+*/
  .date-icon-default {
    .date-variant(@date-default-color);
  }

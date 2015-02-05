@@ -119,7 +119,7 @@ module.exports = function(grunt) {
         options: {
           base: 'docs'
         },
-        src: ['**']
+        src: ['**','.gitignore']
     },
 
     watch: {

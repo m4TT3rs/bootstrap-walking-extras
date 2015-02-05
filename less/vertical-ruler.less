@@ -1,21 +1,27 @@
-/* ==========================================================================
-   Vertical ruler
-   ========================================================================== */
+/* 
+Vertical ruler
+==============
 
-/**
- * This class allows you to add a ruler that is displayed vertically
- * warning: the parent element must be a position relative.
- * note: default BS grid columns are already relative.
- *
- * limitation: when both a left and right ruler are used in adjacent blocks
- *             semi transparent (rgba) can give unwanted effects as 2 lines
- *             are stacked one atop the other.
- *
- * Example HTML:
- *
- * <hr class="vertical-ruler vertical-ruler-left">
- *
- */
+This class allows you to add a ruler that is displayed vertically
+
+`warning: the parent element must be a position relative.`
+
+limitation: when both a left and right ruler are used in adjacent blocks
+         semi transparent (rgba) can give unwanted effects as 2 lines
+         are stacked one atop the other.
+
+## to the right
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler">
+    </div>
+
+## to the left
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler vertical-ruler-left">
+    </div>
+*/
 
 .vertical-ruler{
   position: absolute;

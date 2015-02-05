@@ -1,21 +1,24 @@
-/* ==========================================================================
-   A basic css-only tooltip
-   ========================================================================== */
+/*
+A basic css-only tooltip
+======================== 
 
-/**
- * To use some basic tooltips using only css, they are very basic
- * so only use them for simple effects
- *
- * Limitations:
- * - only a single line is displayed as a tooltip
- * - the tooltip is always aligned to the left so might go off the screen
- *
- * Example HTML:
- *
- * <a data-tooltip="[tooltip content]">
- *     ...
- * </a>
- */
+These are some basic tooltips using only css, they are very basic
+so only use them for simple effects
+
+Limitations:
+-  only a single line is displayed as a tooltip
+-  the tooltip is always aligned to whatever you define so might go off the screen
+-  It does not work on special html elements linke `<input>`, `<img>`, ...
+
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
+
 [data-tooltip] {
 	position: relative;
 
@@ -59,6 +62,16 @@
 		}
 	}
 }
+/*
+## Placed on the left
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]" data-placement="left">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip][data-placement=left]{
 	&:after {
 		top: 50%;
@@ -81,6 +94,16 @@
 	}
 
 }
+/*
+## Placed on the bottom
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]" data-placement="bottom">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip][data-placement=bottom]{
 	&:after {
 		top:auto;
@@ -99,6 +122,16 @@
 
 }
 
+/*
+## Placed on the right
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]" data-placement="right">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip][data-placement=right]{
 	&:after {
 		top: 50%;
@@ -118,4 +151,4 @@
 		margin-top: -@tooltip-arrow-width;
 	}
 }
-// TODO: add different sizes? multiline possible somehow?
+    // TODO: add different sizes? multiline possible somehow?
