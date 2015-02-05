@@ -1,21 +1,41 @@
-/* ==========================================================================
-   Stat(istic)
-   ========================================================================== */
+/* 
+Base styles
+===========
 
-/**
- * inspired on http://semantic-ui.com/views/statistic.html
- *
- * Example HTML:
- *
- * <div class="stat">
- *   <div class="stat-value">
- *       123
- *   </div>
- * </div>
- */
+*Inspired on http://semantic-ui.com/views/statistic.html*
+
+## Single item
+
+    <div class="stat">
+       <div class="stat-value">123</div>
+    </div>
+
+## Label above
+
+    <div class="stat">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12<small>€</small></div>
+    </div>
+
+## Label below
+
+    <div class="stat">
+        <div class="stat-value">42</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+
+## Label above and below
+
+    <div class="stat">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
+
 .stat {
   display: inline-block;
-  //max-width: 200px;
   margin: 0 .25em;
   &.pull-left{
     margin: 0 2em 1em 0;
@@ -39,8 +59,6 @@ a.stat{
 .stat-value{
   font-size:4em;
   line-height: .9em;
-  //color: @stat-default-color;
-  //font-variant: small-caps;
   text-transform: uppercase;
   > .glyphicon{
     font-size:.8em; //make icons slightly smaler so they visualy align with numbers
@@ -53,8 +71,33 @@ a.stat{
   opacity:0.8;
 }
 
+/*
+Horizontal
+==========
 
-// variations
+## Label Right
+
+    <div class="stat stat-horizontal">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12<small>€</small></div>
+    </div>
+
+## Label Left
+
+    <div class="stat stat-horizontal">
+        <div class="stat-value">42</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+
+## Label left and right
+
+    <div class="stat stat-horizontal">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat-horizontal{
   display: block;
   max-width: 9999px;
@@ -81,14 +124,78 @@ a.stat{
   }
 }
 
-// sizes
+/*
+Sizes
+=====
+
+Note: this can be used together with the sizes
+
+## Extra small
+
+    <div class="stat stat-xs">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+## Small
+
+    <div class="stat stat-sm">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+## Default
+
+    <div class="stat">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+## Large
+
+    <div class="stat stat-lg">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat-xs > .stat-value{font-size:2em;}
 .stat-sm > .stat-value{font-size:3em;}
-//.stat-md > .stat-value{font-size:4em;} //<- default size
 .stat-lg > .stat-value{font-size:6em;}
 
-// Colors
-// Contextual variations
+/*
+Contextual color variations
+===========================
+
+    <div class="stat stat-primary">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-success">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-info">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-warning">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-danger">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat-primary {
   .stat-variant(@stat-primary-color);
 }
@@ -108,3 +215,30 @@ a.stat{
 .stat-danger {
   .stat-variant(@stat-danger-color);
 }
+
+
+/*
+Inside a button
+===============
+
+    <a class="stat btn btn-default" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-primary" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-success" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-warning" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-danger" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+*/

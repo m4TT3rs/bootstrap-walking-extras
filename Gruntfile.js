@@ -95,6 +95,32 @@ module.exports = function(grunt) {
         }
       }
     },
+      
+    styleguide: {
+        options: {
+            template: {
+                src: 'vendor/styleguide'
+            },
+            framework: {
+                name: 'styledocco'
+            },
+            template: {
+                include: ['dist/css/Bootstrap-walking-extras.css']
+            }
+        },
+        all: {
+          files: [{
+            'docs': 'less/Bootstrap-walking-extras.less'
+          }]
+        }
+    },
+      
+    'gh-pages': {
+        options: {
+          base: 'docs'
+        },
+        src: ['**','.gitignore']
+    },
 
     watch: {
       less: {
@@ -113,6 +139,9 @@ module.exports = function(grunt) {
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat_sourcemap','uglify']);
+    
+  // JS distribution task.
+  grunt.registerTask('dist-styleguide', ['styleguide']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore']);

@@ -1,23 +1,51 @@
-/* ==========================================================================
-   3D flip panels
-   ========================================================================== */
+/* 
+3D flip panels
+===============
 
-/**
- * This class allows you to create panels that perform a 3D card flip when
- * hovered or when activated by js.
- * !! you must specify a height and a width on the flip panel
- *
- * modifiers:
- * .flip = this extra class flips the box around, can be added by JS to make it flip
- * .hover = adding this class makes the panel flip on :hover.
- *
- * Example HTML:
- *
- * <div class="flip-panel">
- *     <div class="front">[content of the front side]</div>
- *     <div class="back">[content of the back side]</div>
- * </div>
- */
+This class allows you to create panels that perform a 3D card flip when
+hovered or when activated by js.
+
+`!! you must specify a height and a width on the flip panel`
+
+modifiers:
+-  .flip = this extra class flips the box around, can be added by JS to make it flip
+-  .hover = adding this class makes the panel flip on :hover.
+
+
+    <div class="flip-panel hover" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+## vertical flip
+
+    <div class="flip-panel vertical hover" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+## Diagonal flip
+
+    <div class="flip-panel diagonal hover" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+## Without hover effect
+
+Use this if you wish to trigger the flip via JavaScript
+
+    <div class="flip-panel" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+    <div class="flip-panel flip" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+*/
 .flip-panel {
 	width: @flip-panel-base-width;
 	height: @flip-panel-base-height;

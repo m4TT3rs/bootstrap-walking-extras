@@ -1,19 +1,117 @@
-/* ==========================================================================
-   button with an icon
-   ========================================================================== */
+/* 
+Button Iconed
+=====================================
 
-/**
- * this class allows you ta align an icon with the text in a btn, the icon will
- * always be aligned in the middle of the text.
- * This code is designed for both the default bootstrap glyphicons and Fontawesome.
- *
- * Example HTML:
- *
- * <div class="btn btn-default btn-iconed">
- *     <i class="glyphicon glyphicon-<type>"></i>
- *     <span>[button text]</span>
- * </div>
- */
+this class allows you to align an icon with the text in a btn, the icon will
+always be aligned in the middle of the text.
+This code is designed for both the default bootstrap glyphicons and Fontawesome.
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>[button text]</span>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <span>[button text]</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>[button text]</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+## Long text 
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>Lorem ipsum dolor sit amet, <br> consectetur adipisicing<br> elit. Sequi, obcaecati<br> accusamus magni <br>nesciunt modi</span>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <span>Lorem ipsum dolor sit amet, <br> consectetur adipisicing<br> elit. Sequi, obcaecati<br> accusamus magni <br>nesciunt modi</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>Lorem ipsum dolor sit amet, <br> consectetur adipisicing<br> elit. Sequi, obcaecati<br> accusamus magni <br>nesciunt modi</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+## Block level buttons
+
+To the right
+
+    <a href="#" class="btn btn-block btn-info btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-info btn-iconed">
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Sequi, obcaecati accusamus</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+
+To the left
+
+    <a href="#" class="btn btn-block btn-danger btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> <span>Lorem ipsum dolor sit.</span> 
+    </a>
+    <a href="#" class="btn btn-block btn-danger btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Sequi, obcaecati accusamus</span> 
+    </a>
+
+## Different btn sizes
+
+inline
+
+    <a href="#" class="btn btn-success btn-xs btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-success btn-sm btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-success btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-success btn-lg btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+
+block
+
+    <a href="#" class="btn btn-block btn-warning btn-xs btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-warning btn-sm btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-warning btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-warning btn-lg btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+
+## Text alignment
+
+    <a href="#" class="btn btn-primary btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+        <span class="text-center">Center<br>Lorem ipsum <br> dolor sit amet, <br>conse.</span> 
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+    </a>
+
+    <a href="#" class="btn btn-primary btn-iconed">
+        <span class="text-right">Right<br>Lorem ipsum <br> dolor sit amet, <br>conse.</span> 
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+    </a>
+
+    <a href="#" class="btn btn-primary btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+        <span class="text-left">left<br>Lorem ipsum <br> dolor sit amet, <br>conse.</span> 
+    </a>
+
+
+*/
 
 .btn-iconed{
   display:inline-table;

@@ -1,29 +1,80 @@
-/* ==========================================================================
-   Styled checkboxes
-   ========================================================================== */
+/*
+Styled checkboxes
+==================
 
-/**
- * inspired on http://codepen.io/CreativeJuiz/pen/BiHzp & http://callmenick.com/2014/05/13/css-toggle-switch-examples/
- *
- * Example HTML:
- *
- * <div class="checkbox">
- *   <label class="checkbox-styled">
- *     <input type="checkbox" value="">
- *     <i></i> <!-- it is very important to have an empty element after the input field -->
- *     ...
- *   </label>
- * </div>
- *
- * OR
- *
- * <label class="checkbox-inline checkbox-styled">
- *   <input type="checkbox" id="test1" />
- *   <i></i> <!-- it is very important to have an empty element after the input field -->
- *   ...
- * </label>
- *
- */
+*inspired on http://codepen.io/CreativeJuiz/pen/BiHzp & http://callmenick.com/2014/05/13/css-toggle-switch-examples/*
+
+`/!\ it is very important to have an empty element after the input field` In the examples an empty `<i></i>` tag is used.
+
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox"> <i></i>
+        My checkbox label
+      </label>
+    </div>
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox" checked> <i></i> 
+        My checkbox label
+      </label>
+    </div>
+
+## Disabled checkbox
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox" disabled> <i></i> 
+        My checkbox label (disabled)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox" checked disabled> <i></i> 
+        My checkbox label (disabled)
+      </label>
+    </div>
+
+## Larger checkbox
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-lg">
+            <input type="checkbox"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-lg">
+            <input type="checkbox" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+## Inline checkbox
+
+    <label class="checkbox-inline checkbox-styled">
+      <input type="checkbox" /> <i></i>
+      My checkbox label
+    </label>
+    <label class="checkbox-inline checkbox-styled">
+      <input type="checkbox" checked /> <i></i>
+      My checkbox label
+    </label>
+
+Styled Radio
+============
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="radio" name="test-radio-1"> <i></i>
+        My checkbox label
+      </label>
+    </div>
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="radio" name="test-radio-1" checked> <i></i> 
+        My checkbox label
+      </label>
+    </div>
+
+*/
 
  /* Base for label styling */
  .checkbox-styled{
@@ -149,6 +200,71 @@
    padding-left: 33px;
  }
 
+/*
+Toggle checkboxes
+==================
+
+note: can also be used in the inline style (see above)
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+## Disabled toggle
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox" disabled> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox" checked disabled> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+## Larger toggle
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle checkbox-styled-lg">
+            <input type="checkbox"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle checkbox-styled-lg">
+            <input type="checkbox" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+Toggle radios
+==================
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="radio" name="radio-test-2"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="radio" name="radio-test-2" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+*/
 
  .checkbox-styled-toggle{
    padding-left: 33px;

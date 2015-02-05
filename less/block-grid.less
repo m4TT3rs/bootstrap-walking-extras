@@ -1,33 +1,40 @@
-/* ==========================================================================
-   Block grids
-   ========================================================================== */
+/*
+Block grids
+ ===========
 
-/**
- * Block grids give you a way to evenly split its child elements within x columns.
- *
- * inspired on http://foundation.zurb.com/docs/components/block_grid.html
- *
- * grid-<breakpoint>-<columns>
- *
- * breakpoint:
- * xs = small spartphones
- * sm = tablets
- * md = small desktop
- * lg = large desktop
- *
- * columns:
- * 1-12 = number of columns
- *
- * Example HTML:
- *
- * <div class="grid-<breakpoint>-<columns>">
- *     <div class="cell">...</div>
- *     <div class="cell">...</div>
- *	   ...
- * </div>
- */
+Block grids give you a way to evenly split its child elements within x columns.
+You can resize your browser (or use the buttons in the doc) to see what happens
 
-// xs sm md lg
+*inspired on http://foundation.zurb.com/docs/components/block_grid.html*
+
+## Usage
+`.grid-<BREAKPOINT>-<COLUMNS>`
+
+`<breakpoint>`
+-  xs = small spartphones
+-  sm = tablets
+-  md = small desktop
+-  lg = large desktop
+
+`<columns>`
+-  1-12 = number of columns
+
+
+    <div class="grid-xs-2 grid-sm-3 grid-md-4 grid-lg-5">
+         <div class="cell"> <div class="well">1</div> </div>
+         <div class="cell"> <div class="well">2</div> </div>
+         <div class="cell"> <div class="well">3</div> </div>
+         <div class="cell"> <div class="well">4</div> </div>
+         <div class="cell"> <div class="well">5</div> </div>
+         <div class="cell"> <div class="well">6</div> </div>
+         <div class="cell"> <div class="well">7</div> </div>
+         <div class="cell"> <div class="well">8</div> </div>
+         <div class="cell"> <div class="well">9</div> </div>
+    </div>
+
+*/
+
+    // xs sm md lg
 .grid-xs-1,
 .grid-xs-2,
 .grid-xs-3,
@@ -89,13 +96,13 @@
 	}
 }
 
-// Extra small grid
-//
-// Grid classes for extra small devices like smartphones. No offset, push, or
-// pull classes are present here due to the size of the target.
-//
+    // Extra small grid
+    //
+    // Grid classes for extra small devices like smartphones. No offset, push, or
+    // pull classes are present here due to the size of the target.
+    //
 
-//.grid-xs-1,
+    //.grid-xs-1,
 .grid-xs-2,
 .grid-xs-3,
 .grid-xs-4,
@@ -173,11 +180,11 @@
 	&:nth-of-type(12n+1) { clear: both; }
 }
 
-// Small grid
-//
-// Columns, offsets, pushes, and pulls for the small device range, from phones
-// to tablets.
-//
+    // Small grid
+    //
+    // Columns, offsets, pushes, and pulls for the small device range, from phones
+    // to tablets.
+    //
 @media (min-width: @screen-sm-min) {
 
 	//.grid-sm-1,
@@ -261,10 +268,10 @@
 }
 
 
-// Medium grid
-//
-// Columns, offsets, pushes, and pulls for the desktop device range.
-//
+    // Medium grid
+    //
+    // Columns, offsets, pushes, and pulls for the desktop device range.
+    //
 @media (min-width: @screen-md-min) {
 	//.grid-md-1,
 	.grid-md-2,
@@ -346,12 +353,12 @@
 }
 
 
-// Large grid
-//
-// Columns, offsets, pushes, and pulls for the large desktop device range.
-//
-// Note that `.cell-lg-12` doesn't get floated on purpose--there's no need since
-// it's full-width.
+    // Large grid
+    //
+    // Columns, offsets, pushes, and pulls for the large desktop device range.
+    //
+    // Note that `.cell-lg-12` doesn't get floated on purpose--there's no need since
+    // it's full-width.
 
 @media (min-width: @screen-lg-min) {
 	//.grid-lg-1,
