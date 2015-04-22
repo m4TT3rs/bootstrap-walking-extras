@@ -1,0 +1,131 @@
+/* 
+Ruler arrows
+==============
+
+This class allows you to add a ruler with an arrow pointing up/down
+or when used in combination with vertical-ruler left/right.
+
+## Down
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="ruler-arrow-down">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+## Up
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="ruler-arrow-up">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+## left
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler ruler-arrow-left">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+## right
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler ruler-arrow-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+*/
+.ruler-arrow-right,
+.ruler-arrow-left,
+.ruler-arrow-down,
+.ruler-arrow-up{
+    position: relative;
+    &:before,
+    &:after{
+        content:'';
+        position: absolute;
+        height: 0;
+        width: 0;
+        display: block;
+        transition: bottom .4s ease;
+    }
+}
+.ruler-arrow-right{
+    &:before,
+    &:after{
+        left: 0;
+        top:50%;
+    }
+    &:before{
+        margin-top: -(@grid-gutter-width/2);
+        border-left: (@grid-gutter-width/2) solid @hr-border;
+        border-top: (@grid-gutter-width/2) solid transparent;
+        border-bottom: (@grid-gutter-width/2) solid transparent;
+    }
+    &:after{
+        margin-top: -(@grid-gutter-width/2);
+        margin-left: -2px;
+        border-left: (@grid-gutter-width/2) solid @body-bg;
+        border-top: (@grid-gutter-width/2) solid transparent;
+        border-bottom: (@grid-gutter-width/2) solid transparent;
+    }
+}
+.ruler-arrow-left{
+    &:before,
+    &:after{
+        right:0;
+        top:50%;
+    }
+    &:before{
+        margin-top: -(@grid-gutter-width/2);
+        border-right: (@grid-gutter-width/2) solid @hr-border;
+        border-top: (@grid-gutter-width/2) solid transparent;
+        border-bottom: (@grid-gutter-width/2) solid transparent;
+    }
+    &:after{
+        margin-top: -(@grid-gutter-width/2);
+        margin-right: -2px;
+        border-right: (@grid-gutter-width/2) solid @body-bg;
+        border-top: (@grid-gutter-width/2) solid transparent;
+        border-bottom: (@grid-gutter-width/2) solid transparent;
+    }
+}
+.ruler-arrow-up{
+    &:before,
+    &:after{
+        left:50%;
+        bottom:0;
+    }
+    &:before{
+        margin-left: -(@grid-gutter-width/2);
+        border-bottom: (@grid-gutter-width/2) solid @hr-border;
+        border-left: (@grid-gutter-width/2) solid transparent;
+        border-right: (@grid-gutter-width/2) solid transparent;
+    }
+    &:after{
+        margin-left: -(@grid-gutter-width/2);
+        margin-bottom: -2px;
+        border-bottom: (@grid-gutter-width/2) solid @body-bg;
+        border-left: (@grid-gutter-width/2) solid transparent;
+        border-right: (@grid-gutter-width/2) solid transparent;
+    }
+}
+
+.ruler-arrow-down{
+    &:before,
+    &:after{
+        left:50%;
+        top:0;
+    }
+    &:before{
+        margin-left: -(@grid-gutter-width/2);
+        border-top: (@grid-gutter-width/2) solid @hr-border;
+        border-left: (@grid-gutter-width/2) solid transparent;
+        border-right: (@grid-gutter-width/2) solid transparent;
+    }
+    &:after{
+        margin-left: -(@grid-gutter-width/2);
+        margin-top: -2px;
+        border-top: (@grid-gutter-width/2) solid @body-bg;
+        border-left: (@grid-gutter-width/2) solid transparent;
+        border-right: (@grid-gutter-width/2) solid transparent;
+    }
+}

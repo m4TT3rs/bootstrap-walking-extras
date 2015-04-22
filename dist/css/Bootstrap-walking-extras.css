@@ -1,30 +1,218 @@
-/* ==========================================================================
-   Block grids
-   ========================================================================== */
-/**
- * Block grids give you a way to evenly split its child elements within x columns.
- *
- * inspired on http://foundation.zurb.com/docs/components/block_grid.html
- *
- * grid-<breakpoint>-<columns>
- *
- * breakpoint:
- * xs = small spartphones
- * sm = tablets
- * md = small desktop
- * lg = large desktop
- *
- * columns:
- * 1-12 = number of columns
- *
- * Example HTML:
- *
- * <div class="grid-<breakpoint>-<columns>">
- *     <div class="cell">...</div>
- *     <div class="cell">...</div>
- *	   ...
- * </div>
- */
+/* 
+Bootstrap Walking Extras
+========================
+
+This is the main file for the styles, it simply includes all the other files. 
+You can use it as a base if you wish to customize it
+
+*/
+/*
+Available Variables
+===================
+*/
+/*
+## Responsive positioning
+
+These variables control how the spacing defined in the Positioning-responsive classes.
+By default it is set to the gid-gutter-width defined in bootstrap
+
+```css
+@positioning-size-xs-horizontal: 	@grid-gutter-width;
+@positioning-size-xs-vertical: 		@grid-gutter-width;
+
+@positioning-size-sm-horizontal: 	@grid-gutter-width;
+@positioning-size-sm-vertical: 		@grid-gutter-width;
+
+@positioning-size-md-horizontal: 	@grid-gutter-width;
+@positioning-size-md-vertical: 		@grid-gutter-width;
+
+@positioning-size-lg-horizontal: 	@grid-gutter-width;
+@positioning-size-lg-vertical: 		@grid-gutter-width;
+```
+*/
+/*
+## Overlays
+
+These variables control styling aspects of the Overlay
+
+```css
+@overlay-area-padding: 				@thumbnail-caption-padding;
+@overlay-area-color: 				rgba(255,255,255,0.6);
+@overlay-area-bg: 					rgba(0,0,0,0.3);
+@overlay-icon-size: 				4em;
+```
+*/
+/*
+## Overlays
+
+These variables control the default size of a flip panel
+
+```css
+@flip-panel-base-width: 			200px;
+@flip-panel-base-height: 			200px;
+```
+*/
+/*
+## Stat
+
+These variables control the Stat colors
+
+```css
+@stat-primary-color:           @brand-primary;
+@stat-success-color:           @brand-success;
+@stat-info-color:              @brand-info;
+@stat-warning-color:           @brand-warning;
+@stat-danger-color:            @brand-danger;
+```
+*/
+/*
+## Stat
+
+These variables control the Date styles 
+```css
+@date-border-color:            @gray-lighter;
+@date-bg-color:                #fff;
+@date-default-color:           @gray-light;
+@date-primary-color:           @brand-primary;
+@date-success-color:           @brand-success;
+@date-info-color:              @brand-info;
+@date-warning-color:           @brand-warning;
+@date-danger-color:            @brand-danger;
+```
+*/
+/*
+Mixins
+=========
+
+This is a set of helper functions
+
+*/
+/*
+Font face
+=========
+
+You can use this function to quickly add a custom font, it will generate the correct syntax for you
+
+```css
+@font-face {
+    .font-face(@fontname, @fontfile);
+}
+```
+
+*/
+/*
+Background noise
+=========
+You can use this function to ad some random noise as a background image
+
+```css
+.my-selector {
+    .background-noise();
+}
+```
+
+*/
+/*
+stat-variant
+=========
+You can use this function to create a variation on the Stat(istic) element
+
+```css
+.my-stat {
+    .stat-variant(@color);
+}
+```
+
+*/
+/*
+date-variant
+=========
+
+You can use this function to create a variation on the Date element
+
+```css
+.my-date {
+    .date-variant(@color);
+}
+```
+
+*/
+/*
+Stripe
+=========
+
+You can use this function to create a stripe. a stripe is an element that spans the entire width of the screen
+In which you can define the overflow to the left and right of the element
+
+```css
+.my-stripe {
+    .stripe(@leftBackground ; @rightBackground);
+}
+```
+    <div class="stripe-demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis molestiae, eligendi fuga autem. Minus dolorem maiores ducimus consequatur enim, aperiam voluptatibus quaerat facere hic tempora itaque possimus esse ea accusantium laboriosam qui explicabo dicta.</p>
+                </div>
+                <div class="col-xs-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis molestiae, eligendi fuga autem. Minus dolorem maiores ducimus consequatur enim, aperiam voluptatibus quaerat facere hic tempora itaque possimus esse ea accusantium laboriosam qui explicabo dicta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+### Combined with a row aligned
+
+    <div class="stripe-demo">
+        <div class="container">
+            <div class="row row-aligned">
+                <div class="col-sm-4" style="background:PaleTurquoise;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis molestiae, eligendi fuga autem. Minus dolorem maiores ducimus consequatur enim, aperiam voluptatibus quaerat facere hic tempora itaque possimus esse ea accusantium laboriosam qui explicabo dicta..</p>
+                </div>
+                <div class="col-sm-8" style="background:Pink;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis molestiae, eligendi fuga autem. Minus dolorem maiores ducimus consequatur enim, aperiam voluptatibus quaerat facere hic tempora itaque possimus esse ea accusantium laboriosam qui explicabo dicta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+*/
+/*
+Block grids
+ ===========
+
+Block grids give you a way to evenly split its child elements within x columns.
+You can resize your browser (or use the buttons in the doc) to see what happens
+
+*inspired on http://foundation.zurb.com/docs/components/block_grid.html*
+
+## Usage
+`.grid-<BREAKPOINT>-<COLUMNS>`
+
+`<breakpoint>`
+-  xs = small spartphones
+-  sm = tablets
+-  md = small desktop
+-  lg = large desktop
+
+`<columns>`
+-  1-12 = number of columns
+
+
+    <div class="grid-xs-2 grid-sm-3 grid-md-4 grid-lg-5">
+         <div class="cell"> <div class="well">1</div> </div>
+         <div class="cell"> <div class="well">2</div> </div>
+         <div class="cell"> <div class="well">3</div> </div>
+         <div class="cell"> <div class="well">4</div> </div>
+         <div class="cell"> <div class="well">5</div> </div>
+         <div class="cell"> <div class="well">6</div> </div>
+         <div class="cell"> <div class="well">7</div> </div>
+         <div class="cell"> <div class="well">8</div> </div>
+         <div class="cell"> <div class="well">9</div> </div>
+    </div>
+
+*/
 .grid-xs-1,
 .grid-xs-2,
 .grid-xs-3,
@@ -619,21 +807,120 @@
     clear: both;
   }
 }
-/* ==========================================================================
-   button with an icon
-   ========================================================================== */
-/**
- * this class allows you ta align an icon with the text in a btn, the icon will
- * always be aligned in the middle of the text.
- * This code is designed for both the default bootstrap glyphicons and Fontawesome.
- *
- * Example HTML:
- *
- * <div class="btn btn-default btn-iconed">
- *     <i class="glyphicon glyphicon-<type>"></i>
- *     <span>[button text]</span>
- * </div>
- */
+/* 
+Button Iconed
+=====================================
+
+this class allows you to align an icon with the text in a btn, the icon will
+always be aligned in the middle of the text.
+This code is designed for both the default bootstrap glyphicons and Fontawesome.
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>[button text]</span>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <span>[button text]</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>[button text]</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+## Long text 
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>Lorem ipsum dolor sit amet, <br> consectetur adipisicing<br> elit. Sequi, obcaecati<br> accusamus magni <br>nesciunt modi</span>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <span>Lorem ipsum dolor sit amet, <br> consectetur adipisicing<br> elit. Sequi, obcaecati<br> accusamus magni <br>nesciunt modi</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+    <a class="btn btn-default btn-iconed">
+         <i class="glyphicon glyphicon-heart"></i>
+         <span>Lorem ipsum dolor sit amet, <br> consectetur adipisicing<br> elit. Sequi, obcaecati<br> accusamus magni <br>nesciunt modi</span>
+         <i class="glyphicon glyphicon-heart"></i>
+    </a>
+
+## Block level buttons
+
+To the right
+
+    <a href="#" class="btn btn-block btn-info btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-info btn-iconed">
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Sequi, obcaecati accusamus</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+
+To the left
+
+    <a href="#" class="btn btn-block btn-danger btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> <span>Lorem ipsum dolor sit.</span> 
+    </a>
+    <a href="#" class="btn btn-block btn-danger btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Sequi, obcaecati accusamus</span> 
+    </a>
+
+## Different btn sizes
+
+inline
+
+    <a href="#" class="btn btn-success btn-xs btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-success btn-sm btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-success btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-success btn-lg btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+
+block
+
+    <a href="#" class="btn btn-block btn-warning btn-xs btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-warning btn-sm btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-warning btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+    <a href="#" class="btn btn-block btn-warning btn-lg btn-iconed">
+        <span>Lorem ipsum dolor sit.</span> <i class="glyphicon glyphicon-tree-conifer"></i>
+    </a>
+
+## Text alignment
+
+    <a href="#" class="btn btn-primary btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+        <span class="text-center">Center<br>Lorem ipsum <br> dolor sit amet, <br>conse.</span> 
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+    </a>
+
+    <a href="#" class="btn btn-primary btn-iconed">
+        <span class="text-right">Right<br>Lorem ipsum <br> dolor sit amet, <br>conse.</span> 
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+    </a>
+
+    <a href="#" class="btn btn-primary btn-iconed">
+        <i class="glyphicon glyphicon-tree-conifer"></i> 
+        <span class="text-left">left<br>Lorem ipsum <br> dolor sit amet, <br>conse.</span> 
+    </a>
+
+
+*/
 .btn-iconed {
   display: inline-table;
   white-space: normal;
@@ -673,25 +960,54 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-/* ==========================================================================
-   3D flip panels
-   ========================================================================== */
-/**
- * This class allows you to create panels that perform a 3D card flip when
- * hovered or when activated by js.
- * !! you must specify a height and a width on the flip panel
- *
- * modifiers:
- * .flip = this extra class flips the box around, can be added by JS to make it flip
- * .hover = adding this class makes the panel flip on :hover.
- *
- * Example HTML:
- *
- * <div class="flip-panel">
- *     <div class="front">[content of the front side]</div>
- *     <div class="back">[content of the back side]</div>
- * </div>
- */
+/* 
+3D flip panels
+===============
+
+This class allows you to create panels that perform a 3D card flip when
+hovered or when activated by js.
+
+`!! you must specify a height and a width on the flip panel`
+
+modifiers:
+-  .flip = this extra class flips the box around, can be added by JS to make it flip
+-  .hover = adding this class makes the panel flip on :hover.
+
+
+    <div class="flip-panel hover" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+## vertical flip
+
+    <div class="flip-panel vertical hover" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+## Diagonal flip
+
+    <div class="flip-panel diagonal hover" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+## Without hover effect
+
+Use this if you wish to trigger the flip via JavaScript
+
+    <div class="flip-panel" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+    <div class="flip-panel flip" style="margin:30px;">
+        <div class="front" style="background:pink;">[content of the front side]</div>
+        <div class="back" style="background:beige;">[content of the back side]</div>
+    </div>
+
+*/
 .flip-panel {
   width: 200px;
   height: 200px;
@@ -815,23 +1131,26 @@
   -ms-transform: rotate3d(45, 45, 0, 0deg);
   transform: rotate3d(45, 45, 0, 0deg);
 }
-/* ==========================================================================
-   A basic css-only tooltip
-   ========================================================================== */
-/**
- * To use some basic tooltips using only css, they are very basic
- * so only use them for simple effects
- *
- * Limitations:
- * - only a single line is displayed as a tooltip
- * - the tooltip is always aligned to the left so might go off the screen
- *
- * Example HTML:
- *
- * <a data-tooltip="[tooltip content]">
- *     ...
- * </a>
- */
+/*
+A basic css-only tooltip
+======================== 
+
+These are some basic tooltips using only css, they are very basic
+so only use them for simple effects
+
+Limitations:
+-  only a single line is displayed as a tooltip
+-  the tooltip is always aligned to whatever you define so might go off the screen
+-  It does not work on special html elements linke `<input>`, `<img>`, ...
+
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip] {
   position: relative;
 }
@@ -867,6 +1186,16 @@
 [data-tooltip]:focus:after {
   visibility: visible;
 }
+/*
+## Placed on the left
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]" data-placement="left">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip][data-placement=left]:after {
   top: 50%;
   left: auto;
@@ -885,6 +1214,16 @@
   border-right: none;
   margin-top: -5px;
 }
+/*
+## Placed on the bottom
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]" data-placement="bottom">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip][data-placement=bottom]:after {
   top: auto;
   bottom: -35px;
@@ -899,6 +1238,16 @@
   border-bottom: 5px solid #000000;
   border-right: 5px solid transparent;
 }
+/*
+## Placed on the right
+
+    <div class="for-demo-only" style="margin:50px 160px;">
+        <a data-tooltip="[TOOLTIP TEXT]" data-placement="right">
+            Content with tooltip
+        </a>
+    </div>
+
+*/
 [data-tooltip][data-placement=right]:after {
   top: 50%;
   left: 100%;
@@ -915,21 +1264,61 @@
   border-left: none;
   margin-top: -5px;
 }
-/* ==========================================================================
-   overlay
-   ========================================================================== */
-/**
- * inspired on http://www.getuikit.com/docs/overlay.html
- *
- * Example HTML:
- *
- * <a class="overlay" href="">
- *   <img src="" alt="">
- *   <div class="overlay-area">
- *     <i class="overlay-icon ..."></i>
- *   </div>
- * </a>
- */
+/* 
+Overlay
+=======
+
+*inspired on http://www.getuikit.com/docs/overlay.html*
+
+## With an icon
+    <a class="overlay" href="">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        <i class="overlay-icon glyphicon glyphicon-play"></i>
+      </div>
+    </a>
+
+## With text
+    <a class="overlay" href="">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lorem et quam ullamcorper lobortis. Praesent in tellus sem. Cras sollicitudin dui id purus scelerisque, eu aliquet massa posuere.
+      </div>
+    </a>
+
+## with an image
+    <div class="overlay">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        <img src="http://placehold.it/180x180" height="180" width="180" alt="">
+      </div>
+    </div>
+
+## with complex elements
+    <div class="overlay">
+      <img src="http://placehold.it/200x200" height="200" width="200" alt="">
+      <div class="overlay-area">
+        <div class="btn-group" style="position:absolute;bottom:5px;right:5px;">
+            <a class="btn btn-default" href="#"><i class="glyphicon glyphicon-download"></i></a>
+            <a class="btn btn-default" href="#"><i class="glyphicon glyphicon-star"></i></a>
+            <a class="btn btn-default" href="#"><i class="glyphicon glyphicon-heart"></i></a>
+        </div>
+      </div>
+    </div>
+
+## Non image
+
+You can overlay Any content, it does not have to be an image
+
+    <div class="overlay">
+      <p>Donec tincidunt, risus id euismod hendrerit, odio nunc rhoncus dolor, a scelerisque lectus metus sit amet lectus. Donec ornare est a quam varius mollis.</p>
+        <ul><li>Vivamus euismod</li><li>Cras ac fermentum</li></ul>
+      <div class="overlay-area">
+        <i class="overlay-icon glyphicon glyphicon-heart"></i>
+      </div>
+    </div>
+
+*/
 .overlay {
   display: inline-block;
   position: relative;
@@ -968,26 +1357,57 @@
   margin-left: -0.64285714em;
   font-size: 4em;
 }
-/* ==========================================================================
-   An aligned row alternative
-   ========================================================================== */
-/**
- * Modifier for the default bootstrap 3 grid that has its contents aligned
- * this basicaly transforms the normal grid into a "table" with cells
- * each column has an even height
- *
- * This code has limitations:
- *   - all columns must account for 100% of the width (aka 12 columns) no gaps
- *   - no support for push/pull/offset modifier class support
- *   - the columns are displayed as table-cells, they thus behave like tables,
- *     which can cause unwanted behaviour in some cases.
- *
- * Example HTML:
- *
- * <div class="row row-aligned">
- *     <div class="col-<breakpoint>-<size> col-<breakpoint>-<alignment>">...</div>
- * </div>
- */
+/*
+
+An aligned row alternative
+==========================
+Modifier for the default bootstrap 3 grid that has its contents aligned
+this basicaly transforms the normal grid into a "table" with cells
+each column has an even height
+
+This code has limitations:
+-  all columns must account for 100% of the width (aka 12 columns) no gaps
+-  no support for push/pull/offset modifier class support
+-  the columns are displayed as table-cells, they thus behave like tables,
+ which can cause unwanted behaviour in some cases.
+
+
+    <div class="row row-aligned">
+        <div class="col-BREAKPOINT-COLUMNS col-BREAKPOINT-ALIGNMENT">...</div>
+    </div>
+
+
+Breakpoint:
+-  xs = small spartphones
+-  sm = tablets
+-  md = small desktop
+-  lg = large desktop
+
+Columns:
+-  1-12 = number of columns
+
+Alignment: (this is the vertical alignment within a column)
+-  top
+-  middle
+-  bottom
+
+## alignment example
+
+    <div class="row row-aligned">
+        <div class="col-xs-4 col-xs-top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt lorem et quam ullamcorper lobortis. Praesent in tellus sem. Cras sollicitudin dui id purus scelerisque, eu aliquet massa posuere. Curabitur efficitur ante sit amet arcu feugiat feugiat. Aliquam ultricies ullamcorper scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas semper lorem quis vestibulum.</div>
+        <div class="col-xs-4 col-xs-middle">Maecenas scelerisque urna in efficitur tincidunt. Vivamus euismod diam condimentum nisi malesuada, nec ornare purus iaculis. Nullam nulla massa, sollicitudin vel orci vitae</div>
+        <div class="col-xs-4 col-xs-bottom">Vivamus eros ex, lacinia eu nisi sit amet, aliquet volutpat magna. Donec tincidunt, risus id euismod hendrerit, odio nunc rhoncus dolor</div>
+    </div>
+
+## Background color examle
+
+    <div class="row row-aligned">
+        <div class="col-xs-4 col-xs-top" style="background:pink">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+        <div class="col-xs-4 col-xs-middle" style="background:beige">Maecenas scelerisque urna in efficitur tincidunt. Vivamus euismod diam condimentum nisi malesuada, nec ornare purus iaculis. Nullam nulla massa, sollicitudin vel orci vitae</div>
+        <div class="col-xs-4 col-xs-bottom" style="background:lightBlue">Vivamus eros ex.</div>
+    </div>
+
+*/
 .row-aligned {
   display: table;
 }
@@ -1093,23 +1513,158 @@
     vertical-align: bottom;
   }
 }
-/* ==========================================================================
-   Vertical ruler
-   ========================================================================== */
-/**
- * This class allows you to add a ruler that is displayed vertically
- * warning: the parent element must be a position relative.
- * note: default BS grid columns are already relative.
- *
- * limitation: when both a left and right ruler are used in adjacent blocks
- *             semi transparent (rgba) can give unwanted effects as 2 lines
- *             are stacked one atop the other.
- *
- * Example HTML:
- *
- * <hr class="vertical-ruler vertical-ruler-left">
- *
- */
+/* 
+Ruler arrows
+==============
+
+This class allows you to add a ruler with an arrow pointing up/down
+or when used in combination with vertical-ruler left/right.
+
+## Down
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="ruler-arrow-down">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+## Up
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="ruler-arrow-up">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+## left
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler ruler-arrow-left">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+
+## right
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler ruler-arrow-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+*/
+.ruler-arrow-right,
+.ruler-arrow-left,
+.ruler-arrow-down,
+.ruler-arrow-up {
+  position: relative;
+}
+.ruler-arrow-right:before,
+.ruler-arrow-left:before,
+.ruler-arrow-down:before,
+.ruler-arrow-up:before,
+.ruler-arrow-right:after,
+.ruler-arrow-left:after,
+.ruler-arrow-down:after,
+.ruler-arrow-up:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  display: block;
+  transition: bottom .4s ease;
+}
+.ruler-arrow-right:before,
+.ruler-arrow-right:after {
+  left: 0;
+  top: 50%;
+}
+.ruler-arrow-right:before {
+  margin-top: -15px;
+  border-left: 15px solid #eeeeee;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.ruler-arrow-right:after {
+  margin-top: -15px;
+  margin-left: -2px;
+  border-left: 15px solid #ffffff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.ruler-arrow-left:before,
+.ruler-arrow-left:after {
+  right: 0;
+  top: 50%;
+}
+.ruler-arrow-left:before {
+  margin-top: -15px;
+  border-right: 15px solid #eeeeee;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.ruler-arrow-left:after {
+  margin-top: -15px;
+  margin-right: -2px;
+  border-right: 15px solid #ffffff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.ruler-arrow-up:before,
+.ruler-arrow-up:after {
+  left: 50%;
+  bottom: 0;
+}
+.ruler-arrow-up:before {
+  margin-left: -15px;
+  border-bottom: 15px solid #eeeeee;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+.ruler-arrow-up:after {
+  margin-left: -15px;
+  margin-bottom: -2px;
+  border-bottom: 15px solid #ffffff;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+.ruler-arrow-down:before,
+.ruler-arrow-down:after {
+  left: 50%;
+  top: 0;
+}
+.ruler-arrow-down:before {
+  margin-left: -15px;
+  border-top: 15px solid #eeeeee;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+.ruler-arrow-down:after {
+  margin-left: -15px;
+  margin-top: -2px;
+  border-top: 15px solid #ffffff;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+/* 
+Vertical ruler
+==============
+
+This class allows you to add a ruler that is displayed vertically
+
+`warning: the parent element must be a position relative.`
+
+limitation: when both a left and right ruler are used in adjacent blocks
+         semi transparent (rgba) can give unwanted effects as 2 lines
+         are stacked one atop the other.
+
+## to the right
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler">
+    </div>
+
+## to the left
+    <div style="position:relative;height:200px;width:200px;margin:10px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        <hr class="vertical-ruler vertical-ruler-left">
+    </div>
+*/
 .vertical-ruler {
   position: absolute;
   right: 0;
@@ -1124,9 +1679,13 @@
   right: auto;
   left: -1px;
 }
-/* ==========================================================================
-   Responsive modal
-   ========================================================================== */
+/*
+Responsive modal
+================
+
+This code simply makes a modal responsive, this relies on the modal-responsive.js file
+
+*/
 @media (max-width: 767px) {
   .modal {
     overflow: hidden;
@@ -1174,20 +1733,41 @@
     bottom: 0;
   }
 }
-/* ==========================================================================
-   Stat(istic)
-   ========================================================================== */
-/**
- * inspired on http://semantic-ui.com/views/statistic.html
- *
- * Example HTML:
- *
- * <div class="stat">
- *   <div class="stat-value">
- *       123
- *   </div>
- * </div>
- */
+/* 
+Base styles
+===========
+
+*Inspired on http://semantic-ui.com/views/statistic.html*
+
+## Single item
+
+    <div class="stat">
+       <div class="stat-value">123</div>
+    </div>
+
+## Label above
+
+    <div class="stat">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12<small>€</small></div>
+    </div>
+
+## Label below
+
+    <div class="stat">
+        <div class="stat-value">42</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+
+## Label above and below
+
+    <div class="stat">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat {
   display: inline-block;
   margin: 0 .25em;
@@ -1221,6 +1801,33 @@ a.stat:focus {
 .stat-label {
   opacity: 0.8;
 }
+/*
+Horizontal
+==========
+
+## Label Right
+
+    <div class="stat stat-horizontal">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12<small>€</small></div>
+    </div>
+
+## Label Left
+
+    <div class="stat stat-horizontal">
+        <div class="stat-value">42</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+
+## Label left and right
+
+    <div class="stat stat-horizontal">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat-horizontal {
   display: block;
   max-width: 9999px;
@@ -1244,6 +1851,44 @@ a.stat:focus {
 .stat-horizontal > .stat-value ~ .stat-label {
   text-align: left;
 }
+/*
+Sizes
+=====
+
+Note: this can be used together with the sizes
+
+## Extra small
+
+    <div class="stat stat-xs">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+## Small
+
+    <div class="stat stat-sm">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+## Default
+
+    <div class="stat">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+
+## Large
+
+    <div class="stat stat-lg">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat-xs > .stat-value {
   font-size: 2em;
 }
@@ -1253,8 +1898,38 @@ a.stat:focus {
 .stat-lg > .stat-value {
   font-size: 6em;
 }
+/*
+Contextual color variations
+===========================
+
+    <div class="stat stat-primary">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-success">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-info">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-warning">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+    <div class="stat stat-danger">
+        <div class="stat-label">Starting from</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Crazy monkeys</div>
+    </div>
+*/
 .stat-primary > .stat-value {
-  color: #428bca;
+  color: #337ab7;
 }
 .stat-success > .stat-value {
   color: #5cb85c;
@@ -1268,20 +1943,45 @@ a.stat:focus {
 .stat-danger > .stat-value {
   color: #d9534f;
 }
-/* ==========================================================================
-   date icon
-   ========================================================================== */
-/**
- * inspired on http://www.sitepoint.com/create-calendar-icon-html5-css3/
- *
- * Example HTML:
- *
- * <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-lg">
- *     <em>December</em>
- *     <strong>2014</strong>
- *     <span>23</span>
- * </time>
- */
+/*
+Inside a button
+===============
+
+    <a class="stat btn btn-default" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-primary" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-success" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-warning" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+    <a class="stat btn btn-danger" href="#">
+        <span class="stat-value">12</span>
+        <span class="stat-label">Crazy monkeys</span>
+    </a>
+*/
+/*
+Date icon
+=========
+
+*inspired on http://www.sitepoint.com/create-calendar-icon-html5-css3/*
+
+
+    <time datetime="2014-12-23" class="date-icon date-icon-default">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+
+*/
 .date-icon {
   display: inline-block;
   position: relative;
@@ -1317,6 +2017,31 @@ a.stat:focus {
   letter-spacing: -0.05em;
   padding-top: 0.7em;
 }
+/*
+## different sizes
+
+    <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-xs">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-sm">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-default">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-default date-icon-lg">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+
+*/
 .date-icon-xs {
   font-size: .6em;
   border-radius: .8em;
@@ -1329,6 +2054,41 @@ a.stat:focus {
   font-size: 1.33334em;
   border-radius: .5em;
 }
+/*
+## Color variations
+
+    <time datetime="2014-12-23" class="date-icon date-icon-default">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-primary">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-success">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-info">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-warning">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+    <time datetime="2014-12-23" class="date-icon date-icon-danger">
+        <em>December</em>
+        <strong>2014</strong>
+        <span>23</span>
+    </time>
+
+*/
 .date-icon-default > strong {
   background-color: #777777;
   border-bottom: 1px dashed #585858;
@@ -1338,12 +2098,12 @@ a.stat:focus {
   color: #777777;
 }
 .date-icon-primary > strong {
-  background-color: #428bca;
-  border-bottom: 1px dashed #2d6ca2;
-  box-shadow: 0 1px 0 #428bca;
+  background-color: #337ab7;
+  border-bottom: 1px dashed #265a88;
+  box-shadow: 0 1px 0 #337ab7;
 }
 .date-icon-primary > em {
-  color: #428bca;
+  color: #337ab7;
 }
 .date-icon-success > strong {
   background-color: #5cb85c;
@@ -1377,31 +2137,83 @@ a.stat:focus {
 .date-icon-danger > em {
   color: #d9534f;
 }
-/* ==========================================================================
-   Styled checkboxes
-   ========================================================================== */
-/**
- * inspired on http://codepen.io/CreativeJuiz/pen/BiHzp & http://callmenick.com/2014/05/13/css-toggle-switch-examples/
- *
- * Example HTML:
- *
- * <div class="checkbox">
- *   <label class="checkbox-styled">
- *     <input type="checkbox" value="">
- *     <i></i> <!-- it is very important to have an empty element after the input field -->
- *     ...
- *   </label>
- * </div>
- *
- * OR
- *
- * <label class="checkbox-inline checkbox-styled">
- *   <input type="checkbox" id="test1" />
- *   <i></i> <!-- it is very important to have an empty element after the input field -->
- *   ...
- * </label>
- *
- */
+/*
+Styled checkboxes
+==================
+
+*inspired on http://codepen.io/CreativeJuiz/pen/BiHzp & http://callmenick.com/2014/05/13/css-toggle-switch-examples/*
+
+`/!\ it is very important to have an empty element after the input field` In the examples an empty `<i></i>` tag is used.
+
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox"> <i></i>
+        My checkbox label
+      </label>
+    </div>
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox" checked> <i></i> 
+        My checkbox label
+      </label>
+    </div>
+
+## Disabled checkbox
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox" disabled> <i></i> 
+        My checkbox label (disabled)
+      </label>
+    </div>
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="checkbox" checked disabled> <i></i> 
+        My checkbox label (disabled)
+      </label>
+    </div>
+
+## Larger checkbox
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-lg">
+            <input type="checkbox"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-lg">
+            <input type="checkbox" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+## Inline checkbox
+
+    <label class="checkbox-inline checkbox-styled">
+      <input type="checkbox" /> <i></i>
+      My checkbox label
+    </label>
+    <label class="checkbox-inline checkbox-styled">
+      <input type="checkbox" checked /> <i></i>
+      My checkbox label
+    </label>
+
+Styled Radio
+============
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="radio" name="test-radio-1"> <i></i>
+        My checkbox label
+      </label>
+    </div>
+    <div class="checkbox">
+      <label class="checkbox-styled">
+        <input type="radio" name="test-radio-1" checked> <i></i> 
+        My checkbox label
+      </label>
+    </div>
+
+*/
 /* Base for label styling */
 .checkbox-styled {
   padding-left: 20px;
@@ -1520,6 +2332,71 @@ a.stat:focus {
 .checkbox .checkbox-styled-lg {
   padding-left: 33px;
 }
+/*
+Toggle checkboxes
+==================
+
+note: can also be used in the inline style (see above)
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+## Disabled toggle
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox" disabled> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="checkbox" checked disabled> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+## Larger toggle
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle checkbox-styled-lg">
+            <input type="checkbox"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle checkbox-styled-lg">
+            <input type="checkbox" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+Toggle radios
+==================
+
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="radio" name="radio-test-2"> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+    <div class="checkbox">
+        <label class="checkbox-styled checkbox-styled-toggle">
+            <input type="radio" name="radio-test-2" checked> <i></i>
+            Option one is this and that—be sure to include why it's great
+        </label>
+    </div>
+
+*/
 .checkbox-styled-toggle {
   padding-left: 33px;
   /* sizes */
@@ -1633,6 +2510,11 @@ a.stat:focus {
 .checkbox .checkbox-styled-toggle.checkbox-styled-lg {
   padding-left: 59px;
 }
+/*
+
+See mixins
+==========
+*/
 .stripe-demo {
   overflow-x: hidden;
 }
@@ -1660,41 +2542,57 @@ a.stat:focus {
   background-position: top right;
   margin-right: -1px;
 }
-/* ==========================================================================
-   Spacing-specific utilities
-   ========================================================================== */
-/**
- * Used to adjust the default spacing between components
- * Use with great care!
- *
- * <type>-<breakpoint>-<direction>-<size>
- *
- * type:
- * margin
- * padding
- *
- * breakpoint:
- * xs = small spartphones
- * sm = tablets
- * md = small desktop
- * lg = large desktop
- *
- * direction:
- * a = all
- * t = top
- * r = right
- * b = bottom
- * l = left
- * h = horizontal
- * v = vertical
+/*
+Spacing-specific utilities
+ =========================
 
- * direction:
- * n = none
- * s = small
- * m = medium
- * l = large
- * xl = extra-large
- */
+Used to adjust the default spacing between components
+Use with great care!
+
+`<type>-<breakpoint>-<direction>-<size>`
+
+type:
+-  margin
+-  padding
+
+Breakpoint:
+-  xs = small spartphones
+-  sm = tablets
+-  md = small desktop
+-  lg = large desktop
+
+Direction:
+-  a = all
+-  t = top
+-  r = right
+-  b = bottom
+-  l = left
+-  h = horizontal
+-  v = vertical
+
+Size:
+-  n = none
+-  s = small
+-  m = medium
+-  l = large
+-  xl = extra-large
+
+## margins
+
+    <div class="margin-xs-a-n well">Lorem ipsum dolor...</div>
+    <div class="margin-xs-a-s well">Lorem ipsum dolor...</div>
+    <div class="margin-xs-a-m well">Lorem ipsum dolor...</div>
+    <div class="margin-xs-a-l well">Lorem ipsum dolor...</div>
+    <div class="margin-xs-a-xl well">Lorem ipsum dolor...</div>
+
+##paddings
+
+    <div class="padding-xs-a-n well">Lorem ipsum dolor...</div>
+    <div class="padding-xs-a-s well">Lorem ipsum dolor...</div>
+    <div class="padding-xs-a-m well">Lorem ipsum dolor...</div>
+    <div class="padding-xs-a-l well">Lorem ipsum dolor...</div>
+    <div class="padding-xs-a-xl well">Lorem ipsum dolor...</div>
+*/
 /* margins */
 .margin-xs-t-n,
 .margin-xs-v-n,
@@ -2509,14 +3407,31 @@ a.stat:focus {
     padding-left: 120px !important;
   }
 }
-/* ==========================================================================
-   Responsive version of some BS utilities
-   ========================================================================== */
-/**
- *
- * - Responsive versions of the .pull-left and .pull-right classes
- * - a .clear class that simply clears the floats (with responsive version)
- *
+/* 
+Responsive version of some BS utilities
+ =======================================
+
+## responsive floats
+Responsive versions of the .pull-left and .pull-right classes
+
+```css
+.pull-xs-right
+.pull-sm-right
+.pull-md-right
+.pull-lg-right
+```
+
+## Clear 
+
+a .clear class that simply clears the floats (with responsive version)
+
+```css
+.clear
+.clear-sm
+.clear-md
+.clear-lg
+```
+
  */
 .pull-xs-right {
   float: right !important;
